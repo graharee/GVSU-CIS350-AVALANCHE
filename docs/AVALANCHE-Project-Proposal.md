@@ -9,17 +9,17 @@ The concept behind our project is to develop a mobile app that captures spoken a
 The main functionality of the app is user-friendly: a student opens the app and taps a “Record” button to begin capturing audio during a lecture. Once the recording is complete, the app processes the audio and displays a full transcription of the lecture directly on the screen. In addition to viewing the text within the app, users will have the option to download the transcription as a text file for future references.
 
 **Key Features**
-+ Mobile App 
++ It being a Mobile App
 + Downloading capabilities
-+ Keep record of lectures
++ Keep record of lectures on documents in the app
 
 # Anticipated Technologies
 
-(What technologies are needed to build this project)
+- A computer to have the IDE for Python.
 
 # Method/Approach
 
-(What is your estimated "plan of attack" for developing this project)
+The mehtod we plan on using is called Kanban. We will have a shared Google Docs that has 4 secitons. The first being the TO-DO section where what needs to be done in the order that it needs to be done in. The second being the DOING seciton where we can keep track of who is doing what. The third being the TESTING section where we can see who is testing what. The last seciton being the DONE section. This is how we can keep track of our progress. We will also be meeting every so often to see what is working and what is not working (Scram meeting), so we can change things up, if needed. 
 
 # Estimated Timeline
 
