@@ -6,7 +6,7 @@ Project description (~1 Paragraph)
 
 * [Reegan Graham](https://github.com/graharee/CIS350-HW2-GRAHAM) (Developer, Documentor)
 * [Kalia Dorgelo](https://github.com/DorgeloK/CIS350-HW2-Dorgelo/tree/main) (Developer, Tester)
-* Member 3 (Role 5, Role 6)
+* [Nathan Finkel](https://github.com/nathanfinkel/CIS350-HW2-Finkel.git) (Developer, Tester)
 
 # Prerequisites
 
