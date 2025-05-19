@@ -14,6 +14,15 @@ study purposes.
    4. R4: The GUI shall update based on user inputs. 
    5. R5: The GUI shall allow the user to move between actions.
 
+2. Audio-to-text
+   1. When the audio button is clicked, the program shall use the device's microphone to start listening
+   2. The audio-to-text button shall have a microphone on it.
+   3. The audio-to-text button shall indent when clicked on.
+
+3. Download button
+   1. The user shall download the files by pressing the download button.
+   2. By clicking the download button, the application shall prompt the user to name the document they saved.
+
 # Non-Functional Requirements
 
 1. GUI 
@@ -22,3 +31,18 @@ study purposes.
    3. R3: The GUI shall be easy to navigate.
    4. R4: The speed of the GUI is efficient. 
    5. R5: The GUI shall have a neat format that is organized.
+
+2. Audio-to-text
+   1. The audio button shall always be available.
+   2. The audio button shall start recording audio with minimal delay.
+   3. The text output shall be timely with the audio being recorded.
+   4. The text output shall be with minimal audio to text errors.
+
+3. Download Button
+   1. The download button shall download the file in a timely manner.
+
+4. General
+   1. The application shall always be available.
+   2. The application shall  not be requried to be on the Internet
+   3. The application shall be able to store as many text documents as the user needs.
+
