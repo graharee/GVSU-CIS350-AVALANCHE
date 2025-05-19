@@ -1,28 +1,34 @@
+# Overview
+
+This document describes the software requirements for LectureBot, a user-friendly mobile app designed 
+to assist students with lecture review and study. LectureBot records audio during lectures and converts
+the recordings into text files that can be downloaded. These transcriptions can then be used for later 
+study purposes.
 
 ## Functional Requirements
 
-# GUI 
+# 1. GUI 
 
-*R1: The GUI shall use icons to clearly indicate the purpose of buttons.
+1. The GUI shall use icons to clearly indicate the purpose of buttons.
 
-*R2: The GUI shall display uploaded files in a list.
+2. The GUI shall display uploaded files in a list.
 
-*R3: The GUI shall allow users to enter text into input fields.
+3. The GUI shall allow users to enter text into input fields.
 
-*R4: The GUI shall update based on user inputs. 
+4. The GUI shall update based on user inputs. 
 
-*R5: The GUI shall allow the user to move between actions.
+5. The GUI shall allow the user to move between actions.
 
 ## Non-Functional Requirements
 
-# GUI 
+# 1. GUI 
 
-*R1: The GUI shall use legible fonts.
+1. The GUI shall use legible fonts.
 
-*R2: The GUI shall use non-harsh colors.
+2. The GUI shall use non-harsh colors.
 
-*R3: The GUI shall be easy to navigate.
+3. The GUI shall be easy to navigate.
 
-*R4: The speed of the GUI is efficient. 
+4. The speed of the GUI is efficient. 
 
-*R5: The GUI shall have a neat format that is organized. 
+5. The GUI shall have a neat format that is organized. 
