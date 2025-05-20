@@ -15,7 +15,9 @@ The main functionality of the app is user-friendly: a student opens the app and 
 
 # Anticipated Technologies
 
-- A computer to have the IDE for Python.
+- A computer to have the IDE for Python
+   - And to use the microphone
+   - And to import any packages that we will need on Python
 
 # Method/Approach
 
