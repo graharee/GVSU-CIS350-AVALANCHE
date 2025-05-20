@@ -25,11 +25,15 @@ study purposes.
    2. R10: By clicking the download button, the application shall prompt the user to name the document they saved.
 
 4. Transcript Menu
-    1. R11: clicking the button shall display a menu of past class transcripts.
-    2. R12: the menu shall display the names of the transcipts and date.
-    3. R13: selecting the transcript shall open it.
-    4. R14: clicking the button again shall close the transcript menu.
-    5. R15: the transcripts shall be listed by date.
+   1. R11: clicking the button shall display a menu of past class transcripts.
+   2. R12: the menu shall display the names of the transcipts and date.
+   3. R13: selecting the transcript shall open it.
+   4. R14: clicking the button again shall close the transcript menu.
+   5. R15: the transcripts shall be listed by date.
+
+5. Translate Button
+   1. R16: The translation button shall prompt the user to pick a language.
+   2. R17: The translation button shall make a new file that is translated.
 
 # Non-Functional Requirements
 
@@ -37,7 +41,7 @@ study purposes.
    1. NR1: The GUI shall use legible fonts.
    2. NR2: The GUI shall use non-harsh colors.
    3. NR3: The GUI shall be easy to navigate.
-   4. NR4: The speed of the GUI is efficient. 
+   4. NR4: The speed of the GUI shall be efficient. 
    5. NR5: The GUI shall have a neat format that is organized.
 
 2. Audio-to-text
@@ -49,15 +53,18 @@ study purposes.
 3. Download Button
    1. NR10: The download button shall download the file in a timely manner.
 
-4. General
-   1. NR11: The application shall always be available.
-   2. NR12: The application shall  not be requried to be on the Internet
-   3. NR13: The application shall be able to store as many text documents as the user needs.
+4. Transcript Menu
+   1. NR11: the drop down menu shall display quickly.
+   2. NR12: transcripts will be availiable anytime.
+   3. NR13: the transcripts shall open quickly.
+   4. NR14: the data in the transcripts will be held securly.
+   5. NR15: the transcripts will be able to hold a high volume of text.
 
-5. Transcript Menu
-    1. NR14: the drop down menu shall display quickly.
-    2. NR15: transcripts will be availiable anytime.
-    3. NR16: the transcripts shall open quickly.
-    4. NR17: the data in the transcripts will be held securly.
-    5. NR18: the transcripts will be able to hold a high volume of text.
-
+5. Translate Button
+   1. NR16: The translation shall be accurate.
+   2. NR17: The translation shall be efficient
+   3. NR18: The application shall be able to translate a large amount of text.
+6. General
+   1. NR19: The application shall always be available.
+   2. NR20: The application shall  not be requried to be on the Internet
+   3. NR21: The application shall be able to store as many text documents as the user needs.
