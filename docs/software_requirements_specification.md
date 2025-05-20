@@ -25,11 +25,11 @@ study purposes.
    2. R10: By clicking the download button, the application shall prompt the user to name the document they saved.
 
 4. Transcript Menu
-    1. clicking the button shall display a menu of past class transcripts.
-    2. the menu shall display the names of the transcipts and date.
-    3. selecting the transcript shall open it.
-    4. clicking the button again shall close the transcript menu.
-    5. the transcripts shall be listed by date.
+    1. R11: clicking the button shall display a menu of past class transcripts.
+    2. R12: the menu shall display the names of the transcipts and date.
+    3. R13: selecting the transcript shall open it.
+    4. R14: clicking the button again shall close the transcript menu.
+    5. R15: the transcripts shall be listed by date.
 
 # Non-Functional Requirements
 
@@ -55,9 +55,9 @@ study purposes.
    3. NR13: The application shall be able to store as many text documents as the user needs.
 
 5. Transcript Menu
-    1. the drop down menu shall display quickly.
-    2. transcripts will be availiable anytime.
-    3. the transcripts shall open quickly.
-    4. the data in the transcripts will be held securly.
-    5. the transcripts will be able to hold a high volume of text.
+    1. NR14: the drop down menu shall display quickly.
+    2. NR15: transcripts will be availiable anytime.
+    3. NR16: the transcripts shall open quickly.
+    4. NR17: the data in the transcripts will be held securly.
+    5. NR18: the transcripts will be able to hold a high volume of text.
 
