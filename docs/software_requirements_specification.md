@@ -1,3 +1,4 @@
+
 # Overview
 
 This document describes the software requirements for LectureBot, a user-friendly mobile app designed 
@@ -23,6 +24,13 @@ study purposes.
    1. R9: The user shall download the files by pressing the download button.
    2. R10: By clicking the download button, the application shall prompt the user to name the document they saved.
 
+4. Transcript Menu
+    1. clicking the button shall display a menu of past class transcripts.
+    2. the menu shall display the names of the transcipts and date.
+    3. selecting the transcript shall open it.
+    4. clicking the button again shall close the transcript menu.
+    5. the transcripts shall be listed by date.
+
 # Non-Functional Requirements
 
 1. GUI 
@@ -45,4 +53,11 @@ study purposes.
    1. NR11: The application shall always be available.
    2. NR12: The application shall  not be requried to be on the Internet
    3. NR13: The application shall be able to store as many text documents as the user needs.
+
+5. Transcript Menu
+    1. the drop down menu shall display quickly.
+    2. transcripts will be availiable anytime.
+    3. the transcripts shall open quickly.
+    4. the data in the transcripts will be held securly.
+    5. the transcripts will be able to hold a high volume of text.
 
