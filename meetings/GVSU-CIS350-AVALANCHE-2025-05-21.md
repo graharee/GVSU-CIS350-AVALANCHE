@@ -18,4 +18,4 @@ Goals for next week (include responsibilities)
 
 * Finishing most of the programming 
 * Programming: Nathan- Buttons, Kalia- Talk-to-Text, Reegan- GUI
-* Next meeting will be Monday (5/26/25)
+* Next meeting will be Monday (5/26/25) 
