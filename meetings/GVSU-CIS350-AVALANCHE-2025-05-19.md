@@ -19,4 +19,4 @@ Goals for next week (include responsibilities)
 
 * Reegan to sprint plan on JIRA 
 * UML Diagrams: Nathan- Buttons, Kalia- Talk-to-Text, Reegan- GUI
-* Next meeting will be Wednesday (5/19/25)
+* Next meeting will be Wednesday (5/21/25)
