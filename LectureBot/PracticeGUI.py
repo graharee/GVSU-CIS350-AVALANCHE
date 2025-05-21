@@ -10,20 +10,26 @@ class GUI:
             Return:
         '''
         window = Tk()
-        window.geometry("1800x900")
+        window.geometry("900x900")
         window.configure(background = "white")
         window.title("LectureBot")
         logo = PhotoImage(file='logo.png')
         window.iconphoto(True, logo)
 
-        downloadButton = PhotoImage(file='download.png')
+        downloadButtonImg = PhotoImage(file = 'download.png')
+        pancakeButtonImg = PhotoImage(file = 'pancake.png')
 
-        audioButton = Button(window, image= downloadButton, command=self.buttonTest)
+        downloadButton = Button(window, image= downloadButtonImg, command=self.buttonTest)
+        pancakeButton = Button(window, image=pancakeButtonImg, command=self.buttonTest)
 
-        audioButton.config(command = self.buttonTest) #performs callback of function
-        audioButton.config(width = "44", height = "50")
-        audioButton.place()
-        audioButton.pack()
+        downloadButton.config(command = self.buttonTest) #performs callback of function
+        downloadButton.config(width = "44", height = "50")
+        downloadButton.place(x=850, y=0)
+
+        pancakeButton.config(command=self.buttonTest)  # performs callback of function
+        pancakeButton.config(width="58", height="50")
+        pancakeButton.place(x=0, y=0)
+
         window.mainloop()
 
     def buttonTest(self):
