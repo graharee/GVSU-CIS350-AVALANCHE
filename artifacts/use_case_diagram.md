@@ -1,4 +1,6 @@
-# Hypothetical Photo of Inside Our App
+# Use Case Diagram
 
-![The Audio-to-text button is the microphone near the bottom of the photo and it looks like a microphone (R7). Once you press it, it will indent (R8) and then it will start listening to the audio using your device's microphone (R6). Then the user can press the download button to name the document (R9 and R10).](/artifacts/use_case_diagram.pdf)
+![This is the Use Case Diagram.](/artifacts/use_case_diagram.pdf)
+
+
 
