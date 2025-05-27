@@ -13,7 +13,7 @@ class Audio_to_text():
             with sr.Microphone() as source:
                 self.recog.adjust_for_ambient_noise(source, duration=0.2)
                 audio = self.recog.listen(source)
-                text = sr.Recognizer.recognize_google(audio)
+                text = self.recog.recognize_google(audio)
                 return text
         except sr.RequestError as e:
             print(f"Could not request results; {e}")
