@@ -8,14 +8,12 @@ class GUI:
             Parameter "":
             Return:
         '''
-
         self.main = Tk()
         self.main.geometry("900x900")
         self.main.configure(background = "white")
         self.main.title("LectureBot")
         logo = PhotoImage(file='logo.png')
         self.main.iconphoto(True, logo)
-        self.counter = 0
 
         border = Frame(self.main, bg="orange")
         border.place(x=100, y=100, width=750, height=750)
@@ -52,16 +50,35 @@ class GUI:
         print("yo")
 
     def downloadPress(self):
-        namingFile = Toplevel()
-        namingFile.title("Naming Lecture File")
-        namingFile.geometry("200x100")
+        self.savingFile = Toplevel()
+        self.savingFile.title("Naming Lecture File")
+        self.savingFile.geometry("200x100")
 
-        closeButton = Button(namingFile, text = "Save", command = namingFile.destroy)
-        closeButton.place(x=50, y=50)
+        label = Label(self.savingFile, text="File saves to downloads folder", font=("Times New Roman", 10))
+        label.place(x=18, y=10) # Always saving files to downloads folder
+
+        self.saveButton = Button(self.savingFile, text = "Save", command = self.getFilename)
+        self.saveButton.place(x=85, y=70)
+
+        self.filename = Entry(self.savingFile, width=25)
+        self.filename.place(x=25, y=30)
+
+    def getFilename(self):
+        self.lectureName = self.filename.get() + ".txt"
+        print("Filename entered:", self.lectureName)
+
+        # self.saveFile() # Nathans code here
+
+        self.savingFile.destroy()
+
+'''def saveFile(self):
+        path = "/Downloads/" + self.lectureName
+        with open(path, "w") as file:
+            file.write("This is the content to save.") # get audio to text file here
+            '''
 
 def main():
     g = GUI()
-
 
 if __name__ == '__main__':
     main()
