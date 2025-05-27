@@ -1,4 +1,5 @@
 from tkinter import *
+from pathlib import Path
 
 class GUI:
     def __init__(self):
@@ -28,7 +29,7 @@ class GUI:
         downloadButton = Button(self.main, image = downloadButtonImg, command = self.downloadPress)
         pancakeButton = Button(self.main, image = pancakeButtonImg, command = self.pancakePress)
         micButton = Button(self.square, image = micButtonImg, command = self.audioPress)
-        transcriptButton = Button(self.main, text = "T", command = self.audioPress)
+        transcriptButton = Button(self.main, text = "T", command = self.translatePress)
 
         transcriptButton.config(font=("Times New Roman", 21, "bold"), background = "white", width = "1",height = "1")  # performs callback of function
         transcriptButton.place(x=825, y=0)
@@ -51,6 +52,10 @@ class GUI:
         self.pancakePanel.place(x = -200, y = 50)
 
         self.main.mainloop()
+
+    def translatePress(self):
+        print("Translating")
+        # adding translating into txt file here
     def audioPress(self):
         print("audio")
         # adding audio recording here
@@ -61,8 +66,7 @@ class GUI:
 
             y = 0
             for item in self.fileList:
-                label = Label(self.pancakePanel, text=item, font=("Times New Roman", 12, "bold"),
-                          background="#FFA580")
+                label = Label(self.pancakePanel, text=item, font=("Times New Roman", 12, "bold"), background="#FFA580")
                 label.place(x = 18, y = 40 + y)
                 y += 30
 
@@ -88,18 +92,15 @@ class GUI:
     def getFilename(self):
         self.lectureName = self.filename.get() + ".txt"
         self.fileList.append(self.lectureName)
-        print("Filename entered:", self.lectureName)
 
-        # self.saveFile() # Nathans code here
-
+        self.saveFile(self.lectureName)
         self.savingFile.destroy()
 
-'''def saveFile(self):
-        path = "/Downloads/" + self.lectureName
-        with open(path, "w") as file:
-            file.write("This is the content to save.") # get audio to text file here
-            '''
+    def saveFile(self, lectureName):
+        downloads = Path.home() / "Downloads"
+        file_path = downloads / lectureName
 
+        file_path.write_text("audio content")
 def main():
     g = GUI()
 
