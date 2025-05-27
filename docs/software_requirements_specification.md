@@ -66,5 +66,4 @@ study purposes.
    3. NR18: The application shall be able to translate a large amount of text.
 6. General
    1. NR19: The application shall always be available.
-   2. NR20: The application shall  not be requried to be on the Internet
-   3. NR21: The application shall be able to store as many text documents as the user needs.
+   2. NR20: The application shall be able to store as many text documents as the user needs.
