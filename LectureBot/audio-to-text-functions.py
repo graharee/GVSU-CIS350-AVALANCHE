@@ -11,7 +11,7 @@ class Audio_to_text():
     def listen(self):
         try:
             with sr.Microphone() as source:
-                self.recog.adjust_for_ambient_noise(source, duration=0.2)
+                self.recog.adjust_for_ambient_noise(source, duration=0.5)
                 audio = self.recog.listen(source)
                 text = self.recog.recognize_google(audio)
                 return text
