@@ -27,10 +27,10 @@ class GUI:
 
         downloadButton = Button(self.main, image = downloadButtonImg, command = self.downloadPress)
         pancakeButton = Button(self.main, image = pancakeButtonImg, command = self.pancakePress)
-        micButton = Button(self.square, image = micButtonImg, command = self.buttonTest)
-        transcriptButton = Button(self.main, text = "T", command = self.buttonTest)
+        micButton = Button(self.square, image = micButtonImg, command = self.audioPress)
+        transcriptButton = Button(self.main, text = "T", command = self.audioPress)
 
-        transcriptButton.config(font=("Times New Roman", 21, "bold"), background="white", width="1",height="1")  # performs callback of function
+        transcriptButton.config(font=("Times New Roman", 21, "bold"), background = "white", width = "1",height = "1")  # performs callback of function
         transcriptButton.place(x=825, y=0)
 
         downloadButton.config(width="44", height="50")
@@ -42,19 +42,41 @@ class GUI:
         micButton.config(width="237", height="200")
         micButton.place(x=250, y=450)
 
+        self.isPanelVisible = False
+        self.fileList = []
+
+        self.pancakePanel = Frame(self.main, background = "#FFA580", width = 200, height = 850)
+        label = Label(self.pancakePanel, text = "Files Saved:", font=("Times New Roman", 14, "bold"), background = "#FFA580")
+        label.place(x=18, y=10)
+        self.pancakePanel.place(x = -200, y = 50)
+
         self.main.mainloop()
-    def buttonTest(self):
-        print("hi")
+    def audioPress(self):
+        print("audio")
+        # adding audio recording here
 
     def pancakePress(self):
-        print("yo")
+        if (self.isPanelVisible == False):
+            self.pancakePanel.place(x = 0, y = 50)
+
+            y = 0
+            for item in self.fileList:
+                label = Label(self.pancakePanel, text=item, font=("Times New Roman", 12, "bold"),
+                          background="#FFA580")
+                label.place(x = 18, y = 40 + y)
+                y += 30
+
+            self.isPanelVisible = True
+        else:
+            self.pancakePanel.place(x = -200, y = 50)
+            self.isPanelVisible = False
 
     def downloadPress(self):
         self.savingFile = Toplevel()
         self.savingFile.title("Naming Lecture File")
         self.savingFile.geometry("200x100")
 
-        label = Label(self.savingFile, text="File saves to downloads folder", font=("Times New Roman", 10))
+        label = Label(self.savingFile, text = "File saves to downloads folder", font = ("Times New Roman", 10))
         label.place(x=18, y=10) # Always saving files to downloads folder
 
         self.saveButton = Button(self.savingFile, text = "Save", command = self.getFilename)
@@ -65,6 +87,7 @@ class GUI:
 
     def getFilename(self):
         self.lectureName = self.filename.get() + ".txt"
+        self.fileList.append(self.lectureName)
         print("Filename entered:", self.lectureName)
 
         # self.saveFile() # Nathans code here
