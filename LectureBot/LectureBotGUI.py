@@ -4,6 +4,10 @@
 '''
 from tkinter import *
 from pathlib import Path
+import speech_recognition as sr
+import asyncio
+import pyttsx3
+from googletrans import Translator
 
 class GUI:
     def __init__(self):
@@ -19,10 +23,10 @@ class GUI:
         self.main.iconphoto(True, logo)
 
         # adding orange box
-        border = Frame(self.main, bg="orange")
-        border.place(x=100, y=100, width=750, height=750)
+        self.border = Frame(self.main, bg="orange")
+        self.border.place(x=100, y=100, width=750, height=750)
 
-        self.square = Frame(border, bg="white")
+        self.square = Frame(self.border, bg="white")
         self.square.place(x=5, y=5, width=740, height=740)
 
         self.placeButtons()
@@ -35,6 +39,9 @@ class GUI:
         label = Label(self.pancakePanel, text = "Files Saved:", font=("Times New Roman", 14, "bold"), background = "#FFA580")
         label.place(x=18, y=10)
         self.pancakePanel.place(x = -200, y = 50)
+
+        # The output file that keeps track of recorded responses.
+        self.file = None
 
         self.main.mainloop()
 
@@ -70,20 +77,59 @@ class GUI:
         # Places audio button
         micButton.config(width = "237", height = "200")
         micButton.place(x = 250, y = 450)
-    def translatePress(self):
+    async def translatePress(self):
         '''
             Description: Translate button pressed-> button prompts the audio to text conversion
             Return: NONE
         '''
+        src_lang = "en"
+        dest_lang = "es"
         print("Translating")
-        # adding translating here
+
+        # Have a screen pop up that asks which file to translate and which language (dest_lang)
+
+        trans = Translator()
+        translation = await trans.translate(self.file, src=src_lang, dest=dest_lang)
+        # For testing purposes
+        print(translation.text)
+        # For the GUI
+        trans_file = open("translated_" + self.file + ".txt", "w")
+        trans_file.write(translation.text)
+        trans_file.close()
+        # Adds the translated file to the list of files in the pancake button.
+        self.fileList += trans_file
+
     def audioPress(self):
         '''
             Description: Audio button pressed-> button prompts audio to begin recording
             Return: NONE
         '''
+        recog = sr.Recognizer()
+        TEXT = None
         print("audio")
-        # adding audio recording here
+        while(1):
+            try:
+                with sr.Microphone() as source:
+                    recog.adjust_for_ambient_noise(source, duration=0.1)
+                    audio = recog.listen(source, phrase_time_limit=1200)
+                    TEXT = recog.recognize_google(audio)
+                    print(TEXT)
+            except sr.RequestError as e:
+                print(f"Could not request results; {e}")
+            except sr.UnknownValueError:
+                print(f"Unknown Value Error")
+                break
+            except KeyboardInterrupt:
+                print("You stopped the code.")
+            except TimeoutError:
+                print("It timed out.")
+            if TEXT != None:
+                text_label = Label(self.main, text=TEXT, font=("Times New Roman", 25))
+                text_label.place(x=200, y=120, width=520)
+                # This is a file that keeps track of what is being said, until the file is downloaded.
+                self.file = open("output.txt", "a")
+                self.file.write(TEXT + ". ")
+                self.file.close()
 
     def pancakePress(self):
         '''
@@ -125,6 +171,8 @@ class GUI:
         self.filename = Entry(self.savingFile, width = 25)
         self.filename.place(x = 25, y = 30)  # Creating text box for user to enter a file name
 
+        # You have to make a copy of output.txt, while re-nameing it with self.filename, and clearing output.txt.
+
     def getFilename(self):
         '''
             Description: Getting file name from GUI text box
@@ -145,6 +193,8 @@ class GUI:
         file_path = downloads / self.lectureName
 
         file_path.write_text("audio content") # adding audio to text here
+
+
 def main():
     g = GUI()
 
