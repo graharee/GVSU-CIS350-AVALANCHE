@@ -47,6 +47,7 @@ class GUI:
         self.text_box = None
         # This is so you can edit and save the text that was outputted.
         self.txt_file = "output.txt"
+        self.curr_file = "output.txt"
 
         self.main.mainloop()
 
@@ -103,8 +104,11 @@ class GUI:
         # For testing purposes
         print(translation.text)
         # For the GUI
-        trans_file = open("translated_" + self.file + ".txt", "w")
+        asyncio.run(self.translatePress())
+        trans_file = open("translated_" + self.file + ".txt", "r+")
         trans_file.write(translation.text)
+        reading = trans_file.read()
+        self.text_box.insert(END, reading)
         trans_file.close()
         # Adds the translated file to the list of files in the pancake button.
         self.fileList += trans_file
@@ -146,9 +150,16 @@ class GUI:
         output_file.close()
 
     def savePress(self):
+        '''
+            Description: This button allows you to save the changes you made in the text box.
+            Return: NONE
+        '''
         print("Saving...")
-        self.txt_file = open(self.txt_file, "w")
+        if isinstance(self.txt_file, str):
+            self.curr_file = self.txt_file
+        self.txt_file = open(f'{self.curr_file}', "w")
         self.txt_file.write(self.text_box.get(1.0, END))
+        self.txt_file.close()
 
     def pancakePress(self):
         '''
@@ -216,6 +227,7 @@ class GUI:
 
 def main():
     g = GUI()
+
 
 if __name__ == '__main__':
     main()
