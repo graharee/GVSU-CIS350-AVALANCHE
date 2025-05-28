@@ -42,6 +42,8 @@ class GUI:
 
         # The output file that keeps track of recorded responses.
         self.file = None
+        # This is defined in the audioPress funciton. It is so you can edit what is being recorded.
+        self.text_box = None
 
         self.main.mainloop()
 
@@ -61,6 +63,7 @@ class GUI:
         pancakeButton = Button(self.main, image = self.pancakeButtonImg, command = self.pancakePress)
         micButton = Button(self.square, image = self.micButtonImg, command = self.audioPress)
         transcriptButton = Button(self.main, text = "T", command = self.translatePress)
+        saveButton = Button(self.main, text= "Save", command=self.savePress)
 
         # Places transcript button
         transcriptButton.config(font = ("Times New Roman", 21, "bold"), background = "white", width = "1", height = "1")  # performs callback of function
@@ -77,6 +80,10 @@ class GUI:
         # Places audio button
         micButton.config(width = "237", height = "200")
         micButton.place(x = 250, y = 450)
+
+        saveButton.config(width="5", height="1")
+        saveButton.place(x=700, y=600)
+
     async def translatePress(self):
         '''
             Description: Translate button pressed-> button prompts the audio to text conversion
@@ -114,6 +121,11 @@ class GUI:
                     audio = recog.listen(source, phrase_time_limit=1200)
                     TEXT = recog.recognize_google(audio)
                     print(TEXT)
+                    if TEXT != None:
+                        # This is a file that keeps track of what is being said, until the file is downloaded.
+                        self.file = open("output.txt", "a")
+                        self.file.write(TEXT + '\n')
+                        self.file.close()
             except sr.RequestError as e:
                 print(f"Could not request results; {e}")
             except sr.UnknownValueError:
@@ -123,13 +135,17 @@ class GUI:
                 print("You stopped the code.")
             except TimeoutError:
                 print("It timed out.")
-            if TEXT != None:
-                text_label = Label(self.main, text=TEXT, font=("Times New Roman", 25))
-                text_label.place(x=200, y=120, width=520)
-                # This is a file that keeps track of what is being said, until the file is downloaded.
-                self.file = open("output.txt", "a")
-                self.file.write(TEXT + ". ")
-                self.file.close()
+        self.text_box = Text(self.main, width=70, height=20, font=("Times New Roman", 12))
+        self.text_box.place(x=200, y=120)
+        output_file = open("output.txt", "r")
+        reading = output_file.read()
+        self.text_box.insert(END, reading)
+        output_file.close()
+
+    def savePress(self):
+        print("Saving...")
+        txt_file = open("output.txt", "w")
+        txt_file.write(self.text_box.get(1.0, END))
 
     def pancakePress(self):
         '''
