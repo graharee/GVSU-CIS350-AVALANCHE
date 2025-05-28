@@ -3,6 +3,7 @@
     Return: NONE
 '''
 from tkinter import *
+from tkinter import filedialog
 from pathlib import Path
 import speech_recognition as sr
 import asyncio
@@ -42,8 +43,10 @@ class GUI:
 
         # The output file that keeps track of recorded responses.
         self.file = None
-        # This is defined in the audioPress funciton. It is so you can edit what is being recorded.
+        # This is defined in the audioPress funciton. It is so you can display what is being recorded.
         self.text_box = None
+        # This is so you can edit and save the text that was outputted.
+        self.txt_file = "output.txt"
 
         self.main.mainloop()
 
@@ -144,8 +147,8 @@ class GUI:
 
     def savePress(self):
         print("Saving...")
-        txt_file = open("output.txt", "w")
-        txt_file.write(self.text_box.get(1.0, END))
+        self.txt_file = open(self.txt_file, "w")
+        self.txt_file.write(self.text_box.get(1.0, END))
 
     def pancakePress(self):
         '''
