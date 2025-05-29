@@ -3,7 +3,6 @@
     Return: NONE
 '''
 from tkinter import *
-from tkinter import filedialog
 from pathlib import Path
 import speech_recognition as sr
 import asyncio
@@ -22,6 +21,15 @@ class GUI:
         self.main.title("LectureBot")
         logo = PhotoImage(file='logo.png')
         self.main.iconphoto(True, logo)
+        self.savingFile = None
+        self.saveButton = None
+        self.filename = None
+        self.lectureName = None
+        self.box = None
+        self.box2 = None
+        self.choosing_lang = None
+        self.dest_lang = ""
+        self.src_lang = ""
 
         # adding orange box
         self.border = Frame(self.main, bg="orange")
@@ -37,12 +45,13 @@ class GUI:
         self.fileList = []
 
         self.pancakePanel = Frame(self.main, background = "#FFA580", width = 200, height = 850)
-        label = Label(self.pancakePanel, text = "Files Saved:", font=("Times New Roman", 14, "bold"), background = "#FFA580")
+        label = Label(self.pancakePanel, text = "Files Downloaded:", font=("Times New Roman", 14, "bold"), background = "#FFA580")
         label.place(x=18, y=10)
         self.pancakePanel.place(x = -200, y = 50)
 
         # The output file that keeps track of recorded responses.
-        self.file = None
+        self.file = "output.txt"
+        self.translated_file = f"translated_{self.file}.txt"
         # This is defined in the audioPress funciton. It is so you can display what is being recorded.
         self.text_box = None
         # This is so you can edit and save the text that was outputted.
@@ -88,30 +97,62 @@ class GUI:
         saveButton.config(width="5", height="1")
         saveButton.place(x=700, y=600)
 
-    async def translatePress(self):
+    def translatePress(self):
         '''
             Description: Translate button pressed-> button prompts the audio to text conversion
             Return: NONE
         '''
-        src_lang = "en"
-        dest_lang = "es"
-        print("Translating")
-
         # Have a screen pop up that asks which file to translate and which language (dest_lang)
+        self.choosing_lang = Toplevel()  # Creating pop up window
+        self.choosing_lang.title("Choosing the Language")
+        self.choosing_lang.geometry("450x300")
 
-        trans = Translator()
-        translation = await trans.translate(self.file, src=src_lang, dest=dest_lang)
-        # For testing purposes
-        print(translation.text)
-        # For the GUI
-        asyncio.run(self.translatePress())
-        trans_file = open("translated_" + self.file + ".txt", "r+")
-        trans_file.write(translation.text)
-        reading = trans_file.read()
-        self.text_box.insert(END, reading)
-        trans_file.close()
+        label = Label(self.choosing_lang, text="Unfortunately, this program cannot support characters at the moment\n"
+                                               "Please pick a different language.", font=("Times New Roman", 10))
+        label.place(x=18, y=10)
+
+        label = Label(self.choosing_lang, text="Type the First 2 Letters of the Starting Language.",
+                      font=("Times New Roman", 10))
+        label.place(x=18, y=70)
+
+        self.box = Entry(self.choosing_lang, width=60)
+        self.box.place(x=25, y=90)
+
+        label2 = Label(self.choosing_lang, text="Type the First 2 Letters of the Ending Language.",
+                       font=("Times New Roman", 10))
+        label2.place(x=18, y=120)
+
+        self.box2 = Entry(self.choosing_lang, width=60)
+        self.box2.place(x=25, y=140)
+
+        nextButton = Button(self.choosing_lang, text="Done", command=self.done)
+        nextButton.place(x=180, y=230)
+
+    def done(self):
+        '''
+            Description: This button allows the program to access the source and destination languages. Then it calls
+            translate() to translate the text. Finally, it destroys the window.
+            Return: NONE
+        '''
+        self.src_lang = self.box.get()
+        print(self.src_lang)
+        self.dest_lang = self.box2.get()
+        print(self.dest_lang)
+        self.translate()
+        self.choosing_lang.destroy()
+
+    def translate(self):
+        '''
+            Description: This translates the file.
+            Return: NONE
+        '''
+        t = Translate(self.src_lang, self.dest_lang, self.curr_file, self.text_box)
+        asyncio.run(t.output(self.text_box.get(1.0, END)))
+        t.display()
+        self.lectureName = f"translated_{self.curr_file}"
+        self.saveTranslated()
         # Adds the translated file to the list of files in the pancake button.
-        self.fileList += trans_file
+        self.fileList.append(t.file_name)
 
     def audioPress(self):
         '''
@@ -119,7 +160,6 @@ class GUI:
             Return: NONE
         '''
         recog = sr.Recognizer()
-        TEXT = None
         print("audio")
         while(1):
             try:
@@ -128,7 +168,7 @@ class GUI:
                     audio = recog.listen(source, phrase_time_limit=1200)
                     TEXT = recog.recognize_google(audio)
                     print(TEXT)
-                    if TEXT != None:
+                    if TEXT != "":
                         # This is a file that keeps track of what is being said, until the file is downloaded.
                         self.file = open("output.txt", "a")
                         self.file.write(TEXT + '\n')
@@ -187,7 +227,6 @@ class GUI:
                         to save file by a specified name.
             Return: NONE
         '''
-
         self.savingFile = Toplevel()    # Creating pop up window
         self.savingFile.title("Naming Lecture File")
         self.savingFile.geometry("200x100")
@@ -222,7 +261,7 @@ class GUI:
         downloads = Path.home() / "Downloads"
         file_path = downloads / self.lectureName
 
-        with open("output.txt", "r") as output: # Copying contents of the output file into the file the user created
+        with open("output.txt", "r") as output:  # Copying contents of the output file into the file the user created
             content = output.read()
 
         with open(file_path, "w") as new_file:
@@ -231,9 +270,80 @@ class GUI:
         with open("output.txt", "w") as output:
             output.write("")
 
+    def saveTranslated(self):
+        '''
+            Description: Saving translated file to downloads folder and then clearing output.txt, as well.
+            Return: NONE
+        '''
+        downloads = Path.home() / "Downloads"
+        file_path = downloads / self.lectureName
+
+        with open("translated_output.txt", "r") as output:  # Copying contents of the output file into the file the user created
+            content = output.read()
+
+        with open(file_path, "w") as new_file:
+            new_file.write(content)
+
+        with open("translated_output.txt", "w") as output:
+            output.write("")
+
+        with open("output.txt", "w") as output:
+            output.write("")
+
+
 def main():
     g = GUI()
 
 
+class Translate():
+    '''
+        Description: This class helps us translate the text and output it into the text_box in the GUI.
+    '''
+    def __init__(self, src_lang, dest_lang, file_name, text_box):
+        '''
+            Parameters:
+                src_lang = the language we are translating from.
+                dest_lang = the language we want to translate to.
+                file_name = the name of the file that is in the text box.
+                text_box = the textbox in the GUI itself.
+        '''
+        self.src_lang = src_lang
+        self.dest_lang = dest_lang
+        self.file = file_name
+        self.text_box = text_box
+        self.trans = Translator()
+        self.translation = None
+        self.file_name = f"translated_{self.file}"
+
+    async def output(self, text):
+        """
+            Description: This is translating the text and then writing it to the translated version of the file.
+            Parameter:
+                text = the text that we are translating
+            Return: NONE
+        """
+        # Translates the Text
+        self.translation = await self.trans.translate(text, src=self.src_lang, dest=self.dest_lang)
+        print(self.translation.text)
+        # Writes to the
+        f = open(f"{self.file_name}", "w")
+        f.close()
+        trans_file = open(f"{self.file_name}", "r+")
+        trans_file.write(self.translation.text)
+        trans_file.close()
+
+    def display(self):
+        '''
+            Description: Inserts the translated text into the GUI.
+            Return: NONE
+        '''
+        self.text_box.delete(1.0, END)
+        f = open(f'{self.file_name}', "r")
+        reading = f.read()
+        self.text_box.insert(END, reading)
+        f.close()
+
+
 if __name__ == '__main__':
     main()
+
