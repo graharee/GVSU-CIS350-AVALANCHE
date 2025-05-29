@@ -26,14 +26,13 @@ study purposes.
 
 4. Transcript Menu
    1. R11: clicking the button shall display a menu of past class transcripts.
-   2. R12: the menu shall display the names of the transcipts and date.
+   2. R12: the menu shall display the names of the transcipts.
    3. R13: selecting the transcript shall open it.
    4. R14: clicking the button again shall close the transcript menu.
-   5. R15: the transcripts shall be listed by date.
 
 5. Translate Button
-   1. R16: The translation button shall prompt the user to pick a language.
-   2. R17: The translation button shall make a new file that is translated.
+   1. R15: The translation button shall prompt the user to pick a language.
+   2. R16: The translation button shall make a new file that is translated and download it to the user's computer.
 
 # Non-Functional Requirements
 
@@ -66,4 +65,3 @@ study purposes.
    3. NR18: The application shall be able to translate a large amount of text.
 6. General
    1. NR19: The application shall always be available.
-   2. NR20: The application shall be able to store as many text documents as the user needs.
