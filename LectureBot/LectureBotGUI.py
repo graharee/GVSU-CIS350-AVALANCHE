@@ -222,8 +222,14 @@ class GUI:
         downloads = Path.home() / "Downloads"
         file_path = downloads / self.lectureName
 
-        file_path.write_text("audio content") # adding audio to text here
+        with open("output.txt", "r") as output: # Copying contents of the output file into the file the user created
+            content = output.read()
 
+        with open(file_path, "w") as new_file:
+            new_file.write(content)
+
+        with open("output.txt", "w") as output:
+            output.write("")
 
 def main():
     g = GUI()
