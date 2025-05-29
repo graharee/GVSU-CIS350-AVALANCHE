@@ -108,7 +108,8 @@ class GUI:
         self.choosing_lang.geometry("450x300")
 
         label = Label(self.choosing_lang, text="Unfortunately, this program cannot support characters at the moment\n"
-                                               "Please pick a different language.", font=("Times New Roman", 10))
+                                               "Please pick a different language.\n"
+                                               "\nFor spanish it is \'es\'", font=("Times New Roman", 10))
         label.place(x=18, y=10)
 
         label = Label(self.choosing_lang, text="Type the First 2 Letters of the Starting Language.",
