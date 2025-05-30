@@ -28,6 +28,7 @@ class GUI:
         self.box = None
         self.box2 = None
         self.choosing_lang = None
+        self.name = None
         self.dest_lang = ""
         self.src_lang = ""
 
@@ -109,7 +110,7 @@ class GUI:
 
         label = Label(self.choosing_lang, text="Unfortunately, this program cannot support characters at the moment\n"
                                                "Please pick a different language.\n"
-                                               "\nFor spanish it is \'es\'", font=("Times New Roman", 10))
+                                               "For spanish it is \'es\'.", font=("Times New Roman", 10))
         label.place(x=18, y=10)
 
         label = Label(self.choosing_lang, text="Type the First 2 Letters of the Starting Language.",
@@ -125,6 +126,13 @@ class GUI:
 
         self.box2 = Entry(self.choosing_lang, width=60)
         self.box2.place(x=25, y=140)
+
+        label3 = Label(self.choosing_lang, text="Name of File",
+                       font=("Times New Roman", 10))
+        label3.place(x=18, y=170)
+
+        self.box3 = Entry(self.choosing_lang, width=60)
+        self.box3.place(x=25, y=190)
 
         nextButton = Button(self.choosing_lang, text="Done", command=self.done)
         nextButton.place(x=180, y=230)
@@ -150,7 +158,7 @@ class GUI:
         t = Translate(self.src_lang, self.dest_lang, self.curr_file, self.text_box)
         asyncio.run(t.output(self.text_box.get(1.0, END)))
         t.display()
-        self.lectureName = f"translated_{self.curr_file}"
+        self.lectureName = self.box3.get()
         self.saveTranslated()
         # Adds the translated file to the list of files in the pancake button.
         self.fileList.append(t.file_name)
@@ -166,7 +174,7 @@ class GUI:
             try:
                 with sr.Microphone() as source:
                     recog.adjust_for_ambient_noise(source, duration=0.1)
-                    audio = recog.listen(source, 3, 1200)
+                    audio = recog.listen(source, phrase_time_limit=1200)
                     TEXT = recog.recognize_google(audio)
                     print(TEXT)
                     if TEXT != "":
@@ -347,4 +355,3 @@ class Translate():
 
 if __name__ == '__main__':
     main()
-
