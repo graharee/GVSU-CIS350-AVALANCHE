@@ -166,7 +166,7 @@ class GUI:
             try:
                 with sr.Microphone() as source:
                     recog.adjust_for_ambient_noise(source, duration=0.1)
-                    audio = recog.listen(source, phrase_time_limit=1200)
+                    audio = recog.listen(source, 3, 1200)
                     TEXT = recog.recognize_google(audio)
                     print(TEXT)
                     if TEXT != "":
