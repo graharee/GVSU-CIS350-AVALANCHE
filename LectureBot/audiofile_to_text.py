@@ -1,4 +1,3 @@
-from os import remove
 
 import speech_recognition as sr
 
@@ -15,7 +14,8 @@ class AudioFileToText:
             with self.audio_file as source:
                 total_duration = source.DURATION
                 offset = 0
-                duration = 15
+                #the interval
+                duration = 300
                 while offset < total_duration:
                     audio = self.r.record(source,duration=duration,offset=offset)
                     try:
