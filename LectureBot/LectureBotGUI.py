@@ -299,11 +299,6 @@ class GUI:
         with open("output.txt", "w") as output:
             output.write("")
 
-
-def main():
-    g = GUI()
-
-
 class Translate():
     '''
         Description: This class helps us translate the text and output it into the text_box in the GUI.
@@ -352,6 +347,8 @@ class Translate():
         self.text_box.insert(END, reading)
         f.close()
 
+def main():
+    g = GUI()
 
 if __name__ == '__main__':
     main()
