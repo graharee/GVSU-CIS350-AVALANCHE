@@ -4,6 +4,8 @@
 '''
 from tkinter import *
 from pathlib import Path
+from tkinter import filedialog
+from audiofile_to_text import AudioFileToText
 import speech_recognition as sr
 import asyncio
 import pyttsx3
@@ -78,6 +80,7 @@ class GUI:
         micButton = Button(self.square, image = self.micButtonImg, command = self.audioPress)
         transcriptButton = Button(self.main, text = "T", command = self.translatePress)
         saveButton = Button(self.main, text= "Save", command=self.savePress)
+        audiofilebutton = Button(self.main,text = "Uplaod File",command = self.audiofilepress)
 
         # Places transcript button
         transcriptButton.config(font = ("Times New Roman", 21, "bold"), background = "white", width = "1", height = "1")  # performs callback of function
@@ -97,6 +100,11 @@ class GUI:
 
         saveButton.config(width="5", height="1")
         saveButton.place(x=700, y=600)
+
+        # Places audiofile button
+        audiofilebutton.config(font = ("Times New Roman",7,"bold"), background = "white", width = "13", height = "1")
+        audiofilebutton.place(x=825,y=56)
+
 
     def translatePress(self):
         '''
@@ -299,6 +307,23 @@ class GUI:
         with open("output.txt", "w") as output:
             output.write("")
 
+    def audiofilepress(self):
+        """
+        Description: this function allows the user to select an audio file and
+        trancribes it into text.
+        :return: None
+        """
+        file_path = filedialog.askopenfilename(title="Select audio file",filetypes=[("Audio Files", "*.wav")])
+        if file_path:
+            transcriber = AudioFileToText(file_path)
+            text = transcriber.transcribe()
+
+            if text:
+                with open(self.file,"a") as f:
+                    f.write(text + "\n")
+                self.text_box = Text(self.main, width=70, height=20, font=("Times New Roman", 12))
+                self.text_box.place(x=200, y=120)
+                self.text_box.insert(END,text)
 
 def main():
     g = GUI()
