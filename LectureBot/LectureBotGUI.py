@@ -80,7 +80,7 @@ class GUI:
         micButton = Button(self.square, image = self.micButtonImg, command = self.audioPress)
         transcriptButton = Button(self.main, text = "T", command = self.translatePress)
         saveButton = Button(self.main, text= "Save", command=self.savePress)
-        audiofilebutton = Button(self.main,text = "Uplaod File",command = self.audiofilepress)
+        audiofilebutton = Button(self.main,text = "Upload File",command = self.audiofilepress)
 
         # Places transcript button
         transcriptButton.config(font = ("Times New Roman", 21, "bold"), background = "white", width = "1", height = "1")  # performs callback of function
