@@ -57,6 +57,7 @@
     **+ Description:** Testing project to ensure reliability and functionality  
     **+ Expected time to complete:** 4 Hour  
     **+ Responsible:** Nathan, Kalia, and Reegan
+
 5. **+ Name:** Individual Testing / Unit Tests
    **+ Description:** Creating Unit Tests for our own work.
    **+ Expected time to complete:** 6 hours or more
