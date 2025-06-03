@@ -307,8 +307,6 @@ class GUI:
         with open("output.txt", "w") as output:
             output.write("")
 
-<<<<<<< HEAD
-=======
     def audiofilepress(self):
         """
         Description: this function allows the user to select an audio file and
@@ -327,11 +325,6 @@ class GUI:
                 self.text_box.place(x=200, y=120)
                 self.text_box.insert(END,text)
 
-def main():
-    g = GUI()
-
-
->>>>>>> audiofile_to_text
 class Translate():
     '''
         Description: This class helps us translate the text and output it into the text_box in the GUI.
@@ -382,7 +375,6 @@ class Translate():
 
 def main():
     g = GUI()
-
 
 if __name__ == '__main__':
     main()
