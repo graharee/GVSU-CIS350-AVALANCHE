@@ -58,9 +58,9 @@
     **+ Expected time to complete:** 4 Hour  
     **+ Responsible:** Nathan, Kalia, and Reegan
 
-5. **+ Name:** Individual Testing / Unit Tests
-   **+ Description:** Creating Unit Tests for our own work.
-   **+ Expected time to complete:** 6 hours or more
-   **+ Responsible:** Nathan, Kalia, and Reegan Individually
+5.  **+ Name:** Individual Unit Testing  
+    **+ Description:** Creating Unit Tests for our own work.  
+    **+ Expected time to complete:** 6 Hour or More 
+    **+ Responsible:** Nathan, Kalia, and Reegan Individually
 
 
