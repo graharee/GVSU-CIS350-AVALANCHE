@@ -1,6 +1,6 @@
-## LectureBot Task List
+# LectureBot Task List
 
-# Completed Tasks
+## Completed Tasks
 1.  **+ Name:** Setting up Jira  
     **+ Decription:** Creating sprint for LectureBot  
     **+ Expected time to complete:** 1 Hour  
@@ -36,7 +36,7 @@
     **+ Expected time to complete:** 8 Hour  
     **+ Responsible:** Nathan, Kalia, and Reegan  
 
-# Not Completed Tasks
+## Not Completed Tasks
 
 1.  **+ Name:** Final Deliverable  
     **+ Decription:** Final project write-up  
