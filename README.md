@@ -1,8 +1,8 @@
 # CIS 350 Project - Team Avalanche  
 
-#**LectureBot**  
+# LectureBot 
 
-![alt text](C:/GVSU-CIS350-AVALANCHE/logo.png)
+![LectureBot Logo](https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/final-deliverable/LectureBot/logo.png)
 
 ## Team Members and Roles
 
@@ -16,7 +16,7 @@
 [Jira](https://cis350-avalanche.atlassian.net/jira/software/projects/SCRUM/boards/1)  
 
 ## 1. Abstract 
-
+Reegan
 
 ## 2. Introduction  
 **LectureBot** aims to help students cultivate a better learning experience within the classroom. This application allows students to record lectures (in-person or online), edit the transcripts, and save it as a text file for later studying. Not only does **LectureBot** offer a way to record a live lecture, students are able to get a written transcript of a recorded lecture, simply by uploading a .wav file. Lastly, to further enhance the user's learning experience, Lecture Bot allows users to be able to translate their lecture into a non-charcter language of their choosing.   
@@ -28,7 +28,7 @@ Nathan or Kalia?
 Nathan or Kalia?  
 
 ## 5. Risk Analysis and Retrospective  
-
+Reegan
 
 ## 6. Conclusion  
 Overall, we believe that **LectureBot** helps improve students learning experiences. Instead of hurrying to write down notes, students are able to relax and know that **LectureBot** will handle it for them. We hope that **LectureBot** can be used to help the stress of busy students while also helping them in learning more. Of course, there is always room for improvement when it comes to app development, and this something we will continue to strive to do.  
