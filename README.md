@@ -25,6 +25,7 @@ School is difficult, students often face challenges that effect their ability to
 
 ## 3. Architectural Design  
 Nathan or Kalia? 
+**all photos that are uploaded should be added into the figures folder on Git**
 ### 3.1 UML Diagram
 brief description here
 
@@ -63,6 +64,8 @@ In the initial stages of creating **LectureBot** our main goals was first to cre
 One risk that was encountered later in development, was the time it takes to have **LectureBot** translate a .wav audio file into a text file. This risk was introduced because of the limited abilities free API have to offer. This risk included further testing and development to see if improvement could be made by processing smaller parts of audio at a time. After this was done, it was found that this slow translating to test process is something are willing to have since we are using free APIs. In the future, it would be awesome to do research about other APIs that could help us with this issue.
 
 Another risk that was encountered was during the development of the translating text files feature. It was found that languages that include characters, like Chinese, are not something that **LectureBot** is able to handle. This is because it would immensely increase the size of **LectureBot** because it would have to hold each different character. This is something we were willing to sacrifice for right now, and would love to implement in the future when we have more resources available.
+
+These two risks are not anything detrimental to **LectureBot**'s overall design. We are glad we were able to implement these as best as we could, and are excited for when we can improve our app!
 
 ## 6. Conclusion  
 Overall, we believe that **LectureBot** helps improve students learning experiences. Instead of hurrying to write down notes, students are able to relax and know that **LectureBot** will handle it for them. We hope that **LectureBot** can be used to help the stress of busy students while also helping them in learning more. Of course, there is always room for improvement when it comes to app development, and this something we will continue to strive to do.  
