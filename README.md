@@ -2,7 +2,9 @@
 
 # LectureBot 
 
-![LectureBot Logo](https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/final-deliverable/LectureBot/logo.png)
+<p align="center">
+  <img src="https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/LectureBot/logo.png" alt="LectureBot Logo" width="300">
+</p>
 
 ## Team Members and Roles
 
