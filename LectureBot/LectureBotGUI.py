@@ -105,6 +105,8 @@ class GUI:
         audiofilebutton.config(font = ("Times New Roman",7,"bold"), background = "white", width = "13", height = "1")
         audiofilebutton.place(x=825,y=56)
 
+        print("buttons have been placed on GUI")  # testing GUI buttons placement
+
 
     def translatePress(self):
         '''
@@ -112,6 +114,9 @@ class GUI:
             Return: NONE
         '''
         # Have a screen pop up that asks which file to translate and which language (dest_lang)
+
+        print("translate button is pressed")  # testing GUI buttons go to correct task
+
         self.choosing_lang = Toplevel()  # Creating pop up window
         self.choosing_lang.title("Choosing the Language")
         self.choosing_lang.geometry("450x300")
@@ -177,7 +182,9 @@ class GUI:
             Return: NONE
         '''
         recog = sr.Recognizer()
-        print("audio")
+
+        print("audio button is pressed") # testing GUI buttons go to correct task
+
         while(1):
             try:
                 with sr.Microphone() as source:
@@ -211,7 +218,7 @@ class GUI:
             Description: This button allows you to save the changes you made in the text box.
             Return: NONE
         '''
-        print("Saving...")
+        print("Saving...") # testing GUI buttons go to correct task
         if isinstance(self.txt_file, str):
             self.curr_file = self.txt_file
         self.txt_file = open(f'{self.curr_file}', "w")
@@ -224,6 +231,9 @@ class GUI:
                         created and saved so far
             Return: NONE
         '''
+
+        print("pancake button is pressed")  # testing GUI buttons go to correct task
+
         if (self.isPanelVisible == False): # If the panel is not shown
             self.pancakePanel.place(x = 0, y = 50)  # Show the panel
 
@@ -234,9 +244,13 @@ class GUI:
                 y += 30
 
             self.isPanelVisible = True      # Change state to panel shown
+
+            print("pancake panel is visible")  # testing GUI panel does correct task
         else:   # If the panel is shown
             self.pancakePanel.place(x = -200, y = 50) # Make the panel disappear
             self.isPanelVisible = False     # Change state to panel not shown
+
+            print("pancake panel has disappeared")  # testing GUI panel does correct task
 
     def downloadPress(self):
         '''
@@ -244,6 +258,9 @@ class GUI:
                         to save file by a specified name.
             Return: NONE
         '''
+
+        print("download button is pressed")  # testing GUI buttons go to correct task
+
         self.savingFile = Toplevel()    # Creating pop up window
         self.savingFile.title("Naming Lecture File")
         self.savingFile.geometry("200x100")
@@ -257,6 +274,7 @@ class GUI:
         self.filename = Entry(self.savingFile, width = 25)
         self.filename.place(x = 25, y = 30)  # Creating text box for user to enter a file name
 
+        print("saving popup is shown")  # testing GUI popup
         # You have to make a copy of output.txt, while re-nameing it with self.filename, and clearing output.txt.
 
     def getFilename(self):
@@ -264,6 +282,9 @@ class GUI:
             Description: Getting file name from GUI text box
             Return: NONE
         '''
+
+        print("save button is pressed")  # testing GUI buttons go to correct task
+
         self.lectureName = self.filename.get() + ".txt"
         self.fileList.append(self.lectureName)
 
@@ -275,6 +296,7 @@ class GUI:
             Description: Saving file to downloads folder
             Return: NONE
         '''
+
         downloads = Path.home() / "Downloads"
         file_path = downloads / self.lectureName
 
