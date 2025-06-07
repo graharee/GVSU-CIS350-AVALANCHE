@@ -10,6 +10,7 @@ import speech_recognition as sr
 import asyncio
 import pyttsx3
 from googletrans import Translator
+import threading
 
 class GUI:
     def __init__(self):
@@ -57,10 +58,14 @@ class GUI:
         self.file = "output.txt"
         self.translated_file = f"translated_{self.file}.txt"
         # This is defined in the audioPress function. It is so you can display what is being recorded.
-        self.text_box = None
+        self.text_box = Text(self.square, width=91, height=20.2, font=("Times New Roman", 12))
+        self.text_box.place(x=5, y=5)
         # This is so you can edit and save the text that was outputted.
         self.txt_file = "output.txt"
         self.curr_file = "output.txt"
+        # For the drop down menus for the Translation
+        self.clicked = None
+        self.clicked2 = None
 
         self.run()
 
@@ -125,23 +130,58 @@ class GUI:
         self.choosing_lang.title("Choosing the Language")
         self.choosing_lang.geometry("450x300")
 
-        label = Label(self.choosing_lang, text="Unfortunately, this program cannot support characters at the moment\n"
-                                               "Please pick a different language.\n"
-                                               "For spanish it is \'es\'.", font=("Times New Roman", 10))
+        label = Label(self.choosing_lang, text="Please select a language and name your file\n",
+                      font=("Times New Roman", 10))
         label.place(x=18, y=10)
 
-        label = Label(self.choosing_lang, text="Type the First 2 Letters of the Starting Language.",
+        label = Label(self.choosing_lang, text="Choose Starting Language",
                       font=("Times New Roman", 10))
         label.place(x=18, y=70)
 
-        self.box = Entry(self.choosing_lang, width=60)
+        self.clicked = StringVar()
+        self.clicked.set("English")
+
+        self.box = OptionMenu(self.choosing_lang, self.clicked, 'Afrikaans', 'Albanian', 'Amharic', 'Arabic',
+                              'Armenian', 'Azerbaijani', 'Basque', 'Belarusian', 'Bengali', 'Bosnian', 'Bulgarian',
+                              'Catalan', 'Cebuano', 'Chichewa', 'Chinese (simplified)', 'Chinese (traditional)',
+                              'Corsican', 'Croatian', 'Czech', 'Danish', 'Dutch', 'English', 'Esperanto', 'Estonian',
+                              'Filipino', 'Finnish', 'French', 'Frisian', 'Galician', 'Georgian', 'German', 'Greek',
+                              'Gujarati', 'Haitian creole', 'Hausa', 'Hawaiian', 'Hebrew', 'Hebrew', 'Hindi', 'Hmong',
+                              'Hungarian', 'Icelandic', 'Igbo', 'Indonesian', 'Irish', 'Italian', 'Japanese',
+                              'Javanese', 'Kannada', 'Kazakh', 'Khmer', 'Korean', 'Kurdish (Kurmanji)', 'Kyrgyz', 'Lao',
+                              'Latin', 'Latvian', 'Lithuanian', 'Luxembourgish', 'Macedonian', 'Malagasy', 'Malay',
+                              'Malayalam', 'Maltese', 'Maori', 'Marathi', 'Mongolian', 'Myanmar (burmese)', 'Nepali',
+                              'Norwegian', 'Odia', 'Pashto', 'Persian', 'Polish', 'Portuguese', 'Punjabi', 'Romanian',
+                              'Russian', 'Samoan', 'Scots gaelic', 'Serbian', 'Sesotho', 'Shona', 'Sindhi', 'Sinhala',
+                              'Slovak', 'Slovenian', 'Somali', 'Spanish', 'Sundanese', 'Swahili', 'Swedish', 'Tajik',
+                              'Tamil', 'Telugu', 'Thai', 'Turkish', 'Ukrainian', 'Urdu', 'Uyghur', 'Uzbek',
+                              'Vietnamese', 'Welsh', 'Xhosa','Yiddish', 'Yoruba', 'Zulu')
+        """self.box = Entry(self.choosing_lang, width=60)"""
         self.box.place(x=25, y=90)
 
-        label2 = Label(self.choosing_lang, text="Type the First 2 Letters of the Ending Language.",
+        label2 = Label(self.choosing_lang, text="Choose Ending Language.",
                        font=("Times New Roman", 10))
         label2.place(x=18, y=120)
 
-        self.box2 = Entry(self.choosing_lang, width=60)
+        self.clicked2 = StringVar()
+        self.clicked2.set("Spanish")
+
+        self.box2 = OptionMenu(self.choosing_lang, self.clicked2, 'Afrikaans', 'Albanian', 'Amharic', 'Arabic',
+                              'Armenian', 'Azerbaijani', 'Basque', 'Belarusian', 'Bengali', 'Bosnian', 'Bulgarian',
+                              'Catalan', 'Cebuano', 'Chichewa', 'Chinese (simplified)', 'Chinese (traditional)',
+                              'Corsican', 'Croatian', 'Czech', 'Danish', 'Dutch', 'English', 'Esperanto', 'Estonian',
+                              'Filipino', 'Finnish', 'French', 'Frisian', 'Galician', 'Georgian', 'German', 'Greek',
+                              'Gujarati', 'Haitian creole', 'Hausa', 'Hawaiian', 'Hebrew', 'Hindi', 'Hmong',
+                              'Hungarian', 'Icelandic', 'Igbo', 'Indonesian', 'Irish', 'Italian', 'Japanese',
+                              'Javanese', 'Kannada', 'Kazakh', 'Khmer', 'Korean', 'Kurdish (Kurmanji)', 'Kyrgyz', 'Lao',
+                              'Latin', 'Latvian', 'Lithuanian', 'Luxembourgish', 'Macedonian', 'Malagasy', 'Malay',
+                              'Malayalam', 'Maltese', 'Maori', 'Marathi', 'Mongolian', 'Myanmar (burmese)', 'Nepali',
+                              'Norwegian', 'Odia', 'Pashto', 'Persian', 'Polish', 'Portuguese', 'Punjabi', 'Romanian',
+                              'Russian', 'Samoan', 'Scots gaelic', 'Serbian', 'Sesotho', 'Shona', 'Sindhi', 'Sinhala',
+                              'Slovak', 'Slovenian', 'Somali', 'Spanish', 'Sundanese', 'Swahili', 'Swedish', 'Tajik',
+                              'Tamil', 'Telugu', 'Thai', 'Turkish', 'Ukrainian', 'Urdu', 'Uyghur', 'Uzbek',
+                              'Vietnamese', 'Welsh', 'Xhosa', 'Yiddish', 'Yoruba', 'Zulu')
+        """self.box2 = Entry(self.choosing_lang, width=60)"""
         self.box2.place(x=25, y=140)
 
         label3 = Label(self.choosing_lang, text="Name of File",
@@ -160,9 +200,31 @@ class GUI:
             translate() to translate the text. Finally, it destroys the window.
             Return: NONE
         '''
-        self.src_lang = self.box.get()
+        LANGUAGES = dict({'afrikaans': 'af', 'albanian': 'sq', 'amharic': 'am', 'arabic': 'ar', 'armenian': 'hy',
+                          'azerbaijani': 'az', 'basque': 'eu', 'belarusian': 'be', 'bengali': 'bn', 'bosnian': 'bs',
+                          'bulgarian': 'bg', 'catalan': 'ca', 'cebuano': 'ceb', 'chichewa': 'ny',
+                          'chinese (simplified)': 'zh-cn', 'chinese (traditional)': 'zh-tw', 'corsican': 'co',
+                          'croatian': 'hr', 'czech': 'cs', 'danish': 'da', 'dutch': 'nl', 'english': 'en',
+                          'esperanto': 'eo', 'estonian': 'et', 'filipino': 'tl', 'finnish': 'fi', 'french': 'fr',
+                          'frisian': 'fy', 'galician': 'gl', 'georgian': 'ka', 'german': 'de', 'greek': 'el',
+                          'gujarati': 'gu', 'haitian creole': 'ht', 'hausa': 'ha', 'hawaiian': 'haw', 'hebrew': 'he',
+                          'hindi': 'hi', 'hmong': 'hmn', 'hungarian': 'hu', 'icelandic': 'is', 'igbo': 'ig',
+                          'indonesian': 'id', 'irish': 'ga', 'italian': 'it', 'japanese': 'ja', 'javanese': 'jw',
+                          'kannada': 'kn', 'kazakh': 'kk', 'khmer': 'km', 'korean': 'ko', 'kurdish (kurmanji)': 'ku',
+                          'kyrgyz': 'ky', 'lao': 'lo', 'latin': 'la', 'latvian': 'lv', 'lithuanian': 'lt',
+                          'luxembourgish': 'lb', 'macedonian': 'mk', 'malagasy': 'mg', 'malay': 'ms', 'malayalam': 'ml',
+                          'maltese': 'mt', 'maori': 'mi', 'marathi': 'mr', 'mongolian': 'mn', 'myanmar (burmese)': 'my',
+                          'nepali': 'ne', 'norwegian': 'no', 'odia': 'or', 'pashto': 'ps', 'persian': 'fa',
+                          'polish': 'pl', 'portuguese': 'pt', 'punjabi': 'pa', 'romanian': 'ro', 'russian': 'ru',
+                          'samoan': 'sm', 'scots gaelic': 'gd', 'serbian': 'sr', 'sesotho': 'st', 'shona': 'sn',
+                          'sindhi': 'sd', 'sinhala': 'si', 'slovak': 'sk', 'slovenian': 'sl', 'somali': 'so',
+                          'spanish': 'es', 'sundanese': 'su', 'swahili': 'sw', 'swedish': 'sv', 'tajik': 'tg',
+                          'tamil': 'ta', 'telugu': 'te', 'thai': 'th', 'turkish': 'tr', 'ukrainian': 'uk', 'urdu': 'ur',
+                          'uyghur': 'ug', 'uzbek': 'uz', 'vietnamese': 'vi', 'welsh': 'cy', 'xhosa': 'xh',
+                          'yiddish': 'yi', 'yoruba': 'yo', 'zulu': 'zu',})
+        self.src_lang = LANGUAGES[self.clicked.get().lower()]
         print(self.src_lang)
-        self.dest_lang = self.box2.get()
+        self.dest_lang = LANGUAGES[self.clicked2.get().lower()]
         print(self.dest_lang)
         self.translate()
         self.choosing_lang.destroy()
@@ -185,35 +247,10 @@ class GUI:
             Description: Audio button pressed-> button prompts audio to begin recording
             Return: NONE
         '''
-        recog = sr.Recognizer()
-
-        while(1):
-            try:
-                with sr.Microphone() as source:
-                    recog.adjust_for_ambient_noise(source, duration=0.1)
-                    audio = recog.listen(source, phrase_time_limit=1200)
-                    TEXT = recog.recognize_google(audio)
-                    print(TEXT)
-                    if TEXT != "":
-                        # This is a file that keeps track of what is being said, until the file is downloaded.
-                        self.file = open("output.txt", "a")
-                        self.file.write(TEXT + '\n')
-                        self.file.close()
-            except sr.RequestError as e:
-                print(f"Could not request results; {e}")
-            except sr.UnknownValueError:
-                print(f"Unknown Value Error")
-                break
-            except KeyboardInterrupt:
-                print("You stopped the code.")
-            except TimeoutError:
-                print("It timed out.")
-        self.text_box = Text(self.main, width=70, height=20, font=("Times New Roman", 12))
-        self.text_box.place(x=200, y=120)
-        output_file = open("output.txt", "r")
-        reading = output_file.read()
-        self.text_box.insert(END, reading)
-        output_file.close()
+        print("audio")
+        a = Audio_to_Text(self.text_box)
+        thread = threading.Thread(target=a.listen)
+        thread.start()
 
     def savePress(self):
         '''
@@ -339,6 +376,7 @@ class GUI:
                 self.text_box.place(x=200, y=120)
                 self.text_box.insert(END,text)
 
+
 class Translate():
     '''
         Description: This class helps us translate the text and output it into the text_box in the GUI.
@@ -372,7 +410,7 @@ class Translate():
         # Writes to the
         f = open(f"{self.file_name}", "w")
         f.close()
-        trans_file = open(f"{self.file_name}", "r+")
+        trans_file = open(f"{self.file_name}", "r+", encoding="utf-8", errors='ignore')
         trans_file.write(self.translation.text)
         trans_file.close()
 
@@ -382,10 +420,50 @@ class Translate():
             Return: NONE
         '''
         self.text_box.delete(1.0, END)
-        f = open(f'{self.file_name}', "r")
+        f = open(f'{self.file_name}', "r", encoding="utf-8", errors='ignore')
         reading = f.read()
         self.text_box.insert(END, reading)
         f.close()
+
+
+class Audio_to_Text(threading.Thread):
+
+    def __init__(self, text_box):
+        super(Audio_to_Text, self).__init__()
+        self.recog = sr.Recognizer()
+        self.text_box = text_box
+
+    def listen(self):
+        with sr.Microphone() as source:
+            while (1):
+                try:
+                    self.recog.adjust_for_ambient_noise(source, duration=0.5)
+                    audio = self.recog.listen(source, phrase_time_limit=1200)
+                    TEXT = self.recog.recognize_google(audio)
+                    print(TEXT)
+                    if TEXT != "":
+                        # This is a file that keeps track of what is being said, until the file is downloaded.
+                        self.file = open("output.txt", "a")
+                        self.file.write(TEXT + '\n')
+                        self.file.close()
+                        self.text_box.after(0, self.update_text_box)
+                except sr.RequestError as e:
+                    print(f"Could not request results; {e}")
+                except sr.UnknownValueError:
+                    print(f"Unknown Value Error")
+                    break
+                except KeyboardInterrupt:
+                    print("You stopped the code.")
+                except TimeoutError:
+                    print("It timed out.")
+
+    def update_text_box(self):
+        self.text_box.delete(1.0, END)
+        output_file = open("output.txt", "r")
+        reading = output_file.read()
+        self.text_box.insert(END, reading)
+        output_file.close()
+
 
 class LectureBot(GUI):
     def build(self):
@@ -394,9 +472,12 @@ class LectureBot(GUI):
             Return: NONE
         '''
         return self
+
+
 def main():
     app = LectureBot().build()
     app.run()
+
 
 if __name__ == '__main__':
     main()
