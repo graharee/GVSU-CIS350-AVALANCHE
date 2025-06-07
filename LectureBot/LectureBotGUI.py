@@ -346,16 +346,16 @@ class GUI:
         downloads = Path.home() / "Downloads"
         file_path = downloads / self.lectureName
 
-        with open("translated_output.txt", "r") as output:  # Copying contents of the output file into the file the user created
+        with open("translated_output.txt", "r", encoding='utf-8') as output:  # Copying contents of the output file into the file the user created
             content = output.read()
 
-        with open(file_path, "w") as new_file:
+        with open(file_path, "w", encoding='utf-8') as new_file:
             new_file.write(content)
 
-        with open("translated_output.txt", "w") as output:
+        with open("translated_output.txt", "w", encoding='utf-8') as output:
             output.write("")
 
-        with open("output.txt", "w") as output:
+        with open("output.txt", "w", encoding='utf-8') as output:
             output.write("")
 
     def audiofilepress(self):
