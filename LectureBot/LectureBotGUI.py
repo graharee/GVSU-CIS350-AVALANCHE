@@ -240,7 +240,7 @@ class GUI:
 
             y = 0
             for item in self.fileList:      # List all the file created
-                label = Label(self.pancakePanel, text=item, font=("Times New Roman", 12, "bold"), background="#FFA580")
+                label = Label(self.pancakePanel, text=item, font=("Times New Roman", 12, "bold"), background="orange")
                 label.place(x = 18, y = 40 + y)
                 y += 30
 
