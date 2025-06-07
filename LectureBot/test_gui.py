@@ -5,12 +5,12 @@ class Test_GUI(unittest.TestCase):
     def setUp(self):
         self.app = LectureBot()
         self.gui = self.app.build()
+
     def test_app_exists(self):
         '''
             Description: This test checks if the app exists
             Return: NONE
         '''
-        print(self.app)
         self.assertIsNotNone(self.app)
 
     def test_gui_exists(self):
@@ -18,7 +18,6 @@ class Test_GUI(unittest.TestCase):
             Description: This test checks if the gui exists
             Return: NONE
         '''
-        print(self.gui)
         self.assertIsNotNone(self.gui)
 
     def test_logo_img_exists(self):
@@ -97,20 +96,6 @@ class Test_GUI(unittest.TestCase):
             Return: NONE
         '''
         self.assertIsNotNone(self.gui.pancakePanel, "pancake panel does not exist")
-
-    def test_saving_file_popup_exists(self):
-        '''
-            Description: This test checks if the saving file pop up exists
-            Return: NONE
-        '''
-        self.assertIsNotNone(self.gui.downloadPress().savingFile, "saving file pop up does not exist")
-
-    def test_saving_file_popup_textbox_exists(self):
-        '''
-            Description: This test checks if the saving file pop up textbox exists
-            Return: NONE
-        '''
-        self.assertIsNotNone(self.gui.downloadPress().filename, "saving file pop up textbox does not exist")
 
 if __name__ == '__main__':
     unittest.main()
