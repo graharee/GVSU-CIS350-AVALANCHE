@@ -12,7 +12,9 @@ import pyttsx3
 from googletrans import Translator
 import threading
 
+
 class GUI:
+
     def __init__(self):
         '''
             Description: This initializes the GUI
@@ -37,10 +39,10 @@ class GUI:
         self.main.iconphoto(True, self.logo)
 
         self.border = Frame(self.main, bg="orange")
-        self.border.place(x=100, y=100, width=750, height=410)
+        self.border.place(x=100, y=100, width=750, height=650)
 
         self.square = Frame(self.border, bg="white")
-        self.square.place(x=5, y=5, width=740, height=400)
+        self.square.place(x=5, y=5, width=740, height=640)
 
         self.placeButtons()
 
@@ -58,7 +60,7 @@ class GUI:
         self.file = "output.txt"
         self.translated_file = f"translated_{self.file}.txt"
         # This is defined in the audioPress function. It is so you can display what is being recorded.
-        self.text_box = Text(self.square, width=91, height=20.2, font=("Times New Roman", 12))
+        self.text_box = Text(self.square, width=91, height=33, font=("Times New Roman", 12))
         self.text_box.place(x=5, y=5)
         # This is so you can edit and save the text that was outputted.
         self.txt_file = "output.txt"
@@ -86,38 +88,44 @@ class GUI:
         self.downloadButtonImg = PhotoImage(file = 'download.png')
         self.pancakeButtonImg = PhotoImage(file = 'pancake.png')
         self.audioButtonImg = PhotoImage(file = 'mic.png')
+        self.saveButtonImg = PhotoImage(file='save_button.png')
+        self.stopButtonImg = PhotoImage(file='stop_button.png')
+        self.uploadButtonImg = PhotoImage(file='upload.png')
 
         # Adding picture to each button and assigning function
         self.downloadButton = Button(self.main, image = self.downloadButtonImg, command = self.downloadPress)
         self.pancakeButton = Button(self.main, image = self.pancakeButtonImg, command = self.pancakePress)
         self.audioButton = Button(self.main, image = self.audioButtonImg, command = self.audioPress)
         self.transcriptButton = Button(self.main, text = "T", command = self.translatePress)
-        self.saveButton = Button(self.main, text= "Save", command=self.savePress)
-        self.audiofilebutton = Button(self.main,text = "Upload File",command = self.audiofilepress)
+        self.saveButton = Button(self.main, image=self.saveButtonImg, command=self.savePress)
+        self.stopButton = Button(self.main, image=self.stopButtonImg, command=self.stopPress)
+        self.audiofilebutton = Button(self.main, image=self.uploadButtonImg, command = self.audiofilepress)
 
         # Places transcript button
         self.transcriptButton.config(font = ("Times New Roman", 21, "bold"), background = "white", width = "1", height = "1")  # performs callback of function
-        self.transcriptButton.place(x = 825, y = 0)
+        self.transcriptButton.place(x = 731, y = 0)
 
         # Places download button
         self.downloadButton.config(width = "44", height = "50")
         self.downloadButton.place(x = 850, y = 0)
 
         # Places pancake button
-        self.pancakeButton.config(width = "58", height = "50")
+        self.pancakeButton.config(width = "50", height = "50")
         self.pancakeButton.place(x = 0, y = 0)
 
         # Places audio button
-        self.audioButton.config(width = "237", height = "200")
-        self.audioButton.place(x = 350, y = 550)
+        self.audioButton.config(width = "35", height = "50")
+        self.audioButton.place(x = 690, y = 0)
 
-        self.saveButton.config(width="5", height="1")
-        self.saveButton.place(x=700, y=600)
+        self.saveButton.config(width="41", height="50")
+        self.saveButton.place(x=758, y=0)
 
         # Places audiofile button
-        self.audiofilebutton.config(font = ("Times New Roman",7,"bold"), background = "white", width = "13", height = "1")
-        self.audiofilebutton.place(x=825,y=56)
+        self.audiofilebutton.config(font = ("Times New Roman",7,"bold"), background = "white", width = "40", height = "50")
+        self.audiofilebutton.place(x=805,y=0)
 
+        self.stopButton.config(width='27', height='50')
+        self.stopButton.place(x=660, y=0)
 
     def translatePress(self):
         '''
@@ -264,6 +272,9 @@ class GUI:
         self.txt_file = open(f'{self.curr_file}', "w")
         self.txt_file.write(self.text_box.get(1.0, END))
         self.txt_file.close()
+
+    def stopPress(self):
+        pass
 
     def pancakePress(self):
         '''
