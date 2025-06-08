@@ -62,6 +62,11 @@ class GUI:
         # This is defined in the audioPress function. It is so you can display what is being recorded.
         self.text_box = Text(self.square, width=91, height=33, font=("Times New Roman", 12))
         self.text_box.place(x=5, y=5)
+        # Displaying the output.txt (Last known file)
+        output_file = open("output.txt", "r")
+        reading = output_file.read()
+        self.text_box.insert(END, reading)
+        output_file.close()
         # This is so you can edit and save the text that was outputted.
         self.txt_file = "output.txt"
         self.curr_file = "output.txt"
@@ -98,7 +103,6 @@ class GUI:
         self.audioButton = Button(self.main, image = self.audioButtonImg, command = self.audioPress)
         self.transcriptButton = Button(self.main, text = "T", command = self.translatePress)
         self.saveButton = Button(self.main, image=self.saveButtonImg, command=self.savePress)
-        self.stopButton = Button(self.main, image=self.stopButtonImg, command=self.stopPress)
         self.audiofilebutton = Button(self.main, image=self.uploadButtonImg, command = self.audiofilepress)
 
         # Places transcript button
@@ -123,9 +127,6 @@ class GUI:
         # Places audiofile button
         self.audiofilebutton.config(font = ("Times New Roman",7,"bold"), background = "white", width = "40", height = "50")
         self.audiofilebutton.place(x=805,y=0)
-
-        self.stopButton.config(width='27', height='50')
-        self.stopButton.place(x=660, y=0)
 
     def translatePress(self):
         '''
@@ -256,9 +257,10 @@ class GUI:
             Return: NONE
         '''
         print("audio")
+        self.stop_thread = threading.Event()
         a = Audio_to_Text(self.text_box)
-        thread = threading.Thread(target=a.listen)
-        thread.start()
+        self.thread = threading.Thread(target=a.listen)
+        self.thread.start()
 
     def savePress(self):
         '''
@@ -272,9 +274,6 @@ class GUI:
         self.txt_file = open(f'{self.curr_file}', "w")
         self.txt_file.write(self.text_box.get(1.0, END))
         self.txt_file.close()
-
-    def stopPress(self):
-        pass
 
     def pancakePress(self):
         '''
@@ -297,7 +296,6 @@ class GUI:
         else:   # If the panel is shown
             self.pancakePanel.place(x = -200, y = 50) # Make the panel disappear
             self.isPanelVisible = False     # Change state to panel not shown
-
 
     def downloadPress(self):
         '''
@@ -464,7 +462,7 @@ class Audio_to_Text(threading.Thread):
                     print(f"Unknown Value Error")
                     break
                 except KeyboardInterrupt:
-                    print("You stopped the code.")
+                    print("You stopped the microphone.")
                 except TimeoutError:
                     print("It timed out.")
 
