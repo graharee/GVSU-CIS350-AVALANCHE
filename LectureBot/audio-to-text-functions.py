@@ -2,6 +2,7 @@ import speech_recognition as sr
 import pyttsx3
 
 
+
 class Audio_to_text():
 
     def __init__(self):
