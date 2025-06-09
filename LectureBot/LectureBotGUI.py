@@ -48,7 +48,16 @@ class GUI:
 
         # adding pancake panel that shows all downloaded files
         self.isPanelVisible = False
+
+        #creates the folder that the .txt files save to if not already made
+        self.save_folder = Path("saved_transcripts")
+        self.save_folder.mkdir(exist_ok=True)
+
+
         self.fileList = []
+
+        for file in self.save_folder.iterdir():
+            self.fileList.append(file.name)
 
         self.pancakePanel = Frame(self.main, background="orange", width=200, height=850)
         label = Label(self.pancakePanel, text="Files Downloaded:", font=("Times New Roman", 14, "bold"),
@@ -94,7 +103,7 @@ class GUI:
         self.pancakeButtonImg = PhotoImage(file = 'pancake.png')
         self.audioButtonImg = PhotoImage(file = 'mic.png')
         self.saveButtonImg = PhotoImage(file='save_button.png')
-        self.stopButtonImg = PhotoImage(file='stop_button.png')
+        self.stopButtonImg = PhotoImage(file='save_button.png')
         self.uploadButtonImg = PhotoImage(file='upload.png')
 
         # Adding picture to each button and assigning function
@@ -286,9 +295,10 @@ class GUI:
             self.pancakePanel.place(x = 0, y = 50)  # Show the panel
 
             y = 0
-            for item in self.fileList:      # List all the file created
-                label = Label(self.pancakePanel, text=item, font=("Times New Roman", 12, "bold"), background="orange")
-                label.place(x = 18, y = 40 + y)
+            for item in self.fileList:      # List all the file created and creates a button for them
+                button = Button(self.pancakePanel, text=item, font=("Times New Roman", 12, "bold"), background="orange",
+                                command=lambda i=item: self.loadfile(i))
+                button.place(x = 18, y = 40 + y)
                 y += 30
 
             self.isPanelVisible = True      # Change state to panel shown
@@ -296,6 +306,24 @@ class GUI:
         else:   # If the panel is shown
             self.pancakePanel.place(x = -200, y = 50) # Make the panel disappear
             self.isPanelVisible = False     # Change state to panel not shown
+
+    def loadfile(self,filename):
+
+        filepath = self.save_folder / filename
+
+        #checks if file exists
+        if not filepath.exists():
+            print(f"{filename} does not exists")
+            return None
+
+        with open(filepath,"r") as f:
+            text = f.read()
+
+        self.text_box.delete("1.0","end")
+        self.text_box.insert("1.0",text)
+
+        self.curr_file = filepath
+
 
     def downloadPress(self):
         '''
@@ -331,12 +359,11 @@ class GUI:
 
     def saveFile(self):
         '''
-            Description: Saving file to downloads folder
+            Description: Saving file to save_folder
             Return: NONE
         '''
 
-        downloads = Path.home() / "Downloads"
-        file_path = downloads / self.lectureName
+        file_path = self.save_folder / self.lectureName
 
         with open("output.txt", "r") as output:  # Copying contents of the output file into the file the user created
             content = output.read()
@@ -349,11 +376,11 @@ class GUI:
 
     def saveTranslated(self):
         '''
-            Description: Saving translated file to downloads folder and then clearing output.txt, as well.
+            Description: Saving translated file to the saved_transcripts folder and then clearing output.txt, as well.
             Return: NONE
         '''
-        downloads = Path.home() / "Downloads"
-        file_path = downloads / self.lectureName
+
+        file_path = self.save_folder / self.lectureName
 
         with open("translated_output.txt", "r", encoding='utf-8') as output:  # Copying contents of the output file into the file the user created
             content = output.read()
