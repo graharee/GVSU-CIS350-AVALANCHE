@@ -431,7 +431,7 @@ class Translate():
         self.text_box = text_box
         self.trans = Translator()
         self.translation = None
-        self.file_name = f"translated_{self.file}"
+        self.file_name = f"translated_output.txt"
 
     async def output(self, text):
         """
