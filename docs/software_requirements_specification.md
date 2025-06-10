@@ -42,7 +42,7 @@ study purposes.
 1. GUI 
    1. NR1: The GUI shall have correct grammar.
    2. NR2: The GUI shall use colors that are able to contrast with one another to be easier to read.
-   3. NR3: The speed of the GUI shall update within a minute. 
+   3. NR3: The rendering of the GUI shall update within 30 seconds. 
 
 2. Audio-to-text
    1. NR4: The audio button shall always be available whenever the application is used.
@@ -56,7 +56,7 @@ study purposes.
 4. Transcript Menu
    1. NR9: The transcript panel shall display upon pancake button press.
    2. NR10: The transcripts will be available whenever the application is used.
-   3. NR11: The transcripts shall open upon the user's press.
+   3. NR11: The transcripts shall open when the user presses the button with a "T" on it (Transcript button).
    5. NR12: The transcripts will be able to hold a high volume of text.
 
 5. Translate Button
