@@ -39,9 +39,6 @@ brief description here
 ### 3.2 Use Case Diagram
 brief description here
 
-### 3.2 Sequence Diagram
-brief description here
-
 ### 3.3 Communication Diagram
 brief description here
 
