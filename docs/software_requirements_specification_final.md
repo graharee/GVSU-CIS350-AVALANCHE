@@ -1,1 +1,95 @@
 
+# Overview
+
+This document describes the software requirements for LectureBot, a user-friendly mobile app designed 
+to assist students with lecture review and study. LectureBot records audio during lectures and converts
+the recordings into text files that can be downloaded. These transcriptions can then be used for later 
+study purposes.
+
+# Functional Requirements
+
+1. GUI 
+   1. R1: The GUI shall have a download button that is marked with a download symbol.
+   2. R2: The GUI shall display uploaded files in a list, in the order in which they were downloaded.
+   3. R3: The GUI shall allow users to enter the names they desire for their files into the input boxes.
+   4. R4: The GUI shall show an orange panel if the pancake button is pressed. 
+   5. R5: The GUI shall have a peach background.
+
+2. Audio-to-text
+   1. R6: When the audio button is clicked, the program shall use the device's microphone to start listening.
+   2. R7: The audio-to-text button shall have a microphone on it.
+   3. R8: The audio-to-text button shall indent when clicked on.
+   4. R9: The audio-to-text button shall activate the user's microphone to begin recording audio.
+   5. R10: The audio-to-text button shall be in the upper right corner of the GUI at the end of the button line.
+
+3. Download button
+   1. R11: The user shall download the files to the user's computer by pressing the download button.
+   2. R12: The download button shall download the file to the downloads folder in File Explorer on the user's computer.
+   3. R13: By clicking the download button, the application shall prompt the user to name the document they saved.
+   4. R14: The download button shall have an arrow pointing downwards to a line to indicate a file being downloaded.
+   5. R15: The download button shall be in the upper right corner of the GUI.
+
+4. Transcript Panel
+   1. R16: Clicking the transcript button shall display a menu of past lecture transcripts that were saved by the user.
+   2. R17: The panel shall display the names of the transcripts that have been downloaded.
+   4. R18: Clicking the transcript button after pressing it once before shall close the transcript panel.
+   5. R19: The transcript panel shall be orange in color.
+   6. R20: The transcript panel shall display all files as .txt.
+
+5. Translate Button
+   1. R21: The translation button shall prompt the user to pick a language from a drop-down menu.
+   2. R22: The translation button shall make a new file that is translated and download it to the user's computer.
+   3. R23: The translation button shall prompt the user to name the translated file.
+   4. R24: The translation button shall be allowed to translate non-character-based and character-based languages.
+   5. R25: The translation button shall have a "T" on the button. 
+
+6. Upload Audio File
+   1. R26: The upload audio file function shall take a file of type .wave.
+   2. R27: The upload button shall be in the upper right corner next to the download button. 
+   3. R28: The upload button shall open up a window leading to the user's file explorer to pick a .wave file.
+   4. R29: The upload file button shall paste the transcribed text into the textbox in the GUI.
+   5. R30: The upload button shall have a box with an arrow pointing out of it. 
+
+# Non-Functional Requirements
+
+1. GUI 
+   1. NR1: The GUI shall have correct grammar.
+   2. NR2: The GUI shall use colors that are able to contrast with one another to be easier to read.
+   3. NR3: The rendering of the GUI shall update within 30 seconds.
+   4. NR4: The GUI shall not crash after a button is pushed.
+   5. NR5: The GUI shall always be available whenever the code is run.
+
+2. Audio-to-text
+   1. NR6: The audio button shall always be available whenever the application is used.
+   2. NR7: The audio button shall start recording audio with a 5-second delay.
+   3. NR8: The text output shall be updated within 10 seconds of the audio being recorded.
+   4. NR9: The text output shall be with minimal audio-to-text errors.
+   5. NR10: The microphone shall stop listening after silence for 3 seconds.
+
+3. Download Button
+   1. NR11: The download button shall download the file within 5 seconds.
+   2. NR12: The download button shall download the file named with the name you gave it.
+   3. NR13: The download button shall always be available when clicked on.
+   4. NR14: The download button shall access your File Explorer download folder and place the file there.
+   5. NR15: The download button shall keep the contents of the file being downloaded accurate by copying it over exactly.
+
+4. Transcript Menu
+   1. NR16: The transcript panel shall display upon pancake button press.
+   2. NR17: The transcripts will be available whenever the application is used.
+   3. NR18: The transcripts shall open when the user presses the button with a "T" on it (Transcript button).
+   5. NR19: The transcripts will be able to display 23 names of files at a time.
+   6. NR20: The transcript menu shall open every time you press the pancake button.
+
+5. Translate Button
+   1. NR21: The translation shall be translated accurately from the original file using the Google trans package.
+   2. NR22: The translation shall be completed within 3 seconds.
+   3. NR23: The application shall be able to translate 1500 characters.
+   4. NR24: The translation shall translate the text every time the translation button is pressed.
+   5. NR25: The translation button shall translate correctly to no other language than the one selected by the user.
+
+6. Upload Audio File
+   1. NR26: The uploaded audio file shall be transcribed within 3 minutes.
+   2. NR27: The upload button shall always be available every time the upload button is clicked.
+   3. NR28: The upload button shall accurately transcribe the audio file that was uploaded.
+   4. NR29: The upload button shall always open File Explorer so the .wave file can be clicked.
+   5. NR30: The amount of text that shall be transcribable is 1200 words. 
