@@ -92,4 +92,14 @@ study purposes.
    2. NR27: The upload button shall always be available every time the upload button is clicked.
    3. NR28: The upload button shall accurately transcribe the audio file that was uploaded.
    4. NR29: The upload button shall always open File Explorer so the .wave file can be clicked.
-   5. NR30: The amount of text that shall be transcribable is 1200 words. 
+   5. NR30: The amount of text that shall be transcribable is 1200 words.
+
+# Test Specification
+
+## Unit Tests
+
+## Integration Tests
+
+## System Tests
+
+# Software Artifacts
