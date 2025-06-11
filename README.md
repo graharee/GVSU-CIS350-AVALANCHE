@@ -53,13 +53,16 @@ Nathan or Kalia?
 ### 4.3 Editing Text
 
 
-### 4.4 Saving File
+### 4.4 Saving Text
+
+
+### 4.5 Downloading File
 show pancake panel here too
 
-### 4.5 Translating File
+### 4.6 Translating File
 
 
-### 4.6 Uploading Audio File
+### 4.7 Uploading Audio File
 
 
 ## 5. Risk Analysis and Retrospective  
