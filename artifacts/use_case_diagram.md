@@ -6,20 +6,20 @@
 
 ## Actors:
     - User
+    - Developer
 
 ## Description:
 
-After the user has recorded their lecture, they can press the download button. This allows the user to name the document and access it later, if they'd like. 
+After the user has recorded what they need, they can press the download button. This allows the user to name the document, access it later, and see already downloaded files by pressing the pancake button.
 
 ## Cross Ref.:
-
-    -R6
-    -R9
-    -R10
-    -R11
+    - R6
+    - R9
+    - R10
+    - R11
 
 ## Use Cases:
     
-The user must have recorded the lecuture to download it. 
+The user must have recorded audio or edited the document for text to be in the downloaded document.
     
 
