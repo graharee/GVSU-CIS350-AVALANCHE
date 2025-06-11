@@ -98,8 +98,123 @@ study purposes.
 
 ## Unit Tests
 
+| ID | Description | Steps | Input Values | Expected Output | Actual Output
+| Pass/Fail | Requirement Link |
+| :-------------: | :----------: | :----------: | :----------: | :----------:
+| :----------: | :----------: | :----------: |
+| TC1 | <TC1 description> | <steps to execute TC1> | <input values to this
+test case> | <expected output as a result of test case> | <actual output of
+test case> | <did it pass or fail?> | <requirement IDs this test case is
+linked to> |
+
+| ID | Description | Steps | Input Values | Expected Output | Actual Output
+| Pass/Fail | Requirement Link |
+| :-------------: | :----------: | :----------: | :----------: | :----------:
+| :----------: | :----------: | :----------: |
+| TC1 | <TC1 description> | <steps to execute TC1> | <input values to this
+test case> | <expected output as a result of test case> | <actual output of
+test case> | <did it pass or fail?> | <requirement IDs this test case is
+linked to> |
+
+| ID | Description | Steps | Input Values | Expected Output | Actual Output
+| Pass/Fail | Requirement Link |
+| :-------------: | :----------: | :----------: | :----------: | :----------:
+| :----------: | :----------: | :----------: |
+| TC1 | <TC1 description> | <steps to execute TC1> | <input values to this
+test case> | <expected output as a result of test case> | <actual output of
+test case> | <did it pass or fail?> | <requirement IDs this test case is
+linked to> |
+
+| ID | Description | Steps | Input Values | Expected Output | Actual Output
+| Pass/Fail | Requirement Link |
+| :-------------: | :----------: | :----------: | :----------: | :----------:
+| :----------: | :----------: | :----------: |
+| TC1 | <TC1 description> | <steps to execute TC1> | <input values to this
+test case> | <expected output as a result of test case> | <actual output of
+test case> | <did it pass or fail?> | <requirement IDs this test case is
+linked to> |
+
 ## Integration Tests
+
+| ID | Description | Steps | Input Values | Expected Output | Actual Output
+| Pass/Fail | Requirement Link |
+| :-------------: | :----------: | :----------: | :----------: | :----------:
+| :----------: | :----------: | :----------: |
+| TC1 | <TC1 description> | <steps to execute TC1> | <input values to this
+test case> | <expected output as a result of test case> | <actual output of
+test case> | <did it pass or fail?> | <requirement IDs this test case is
+linked to> |
+
+| ID | Description | Steps | Input Values | Expected Output | Actual Output
+| Pass/Fail | Requirement Link |
+| :-------------: | :----------: | :----------: | :----------: | :----------:
+| :----------: | :----------: | :----------: |
+| TC1 | <TC1 description> | <steps to execute TC1> | <input values to this
+test case> | <expected output as a result of test case> | <actual output of
+test case> | <did it pass or fail?> | <requirement IDs this test case is
+linked to> |
+
+| ID | Description | Steps | Input Values | Expected Output | Actual Output
+| Pass/Fail | Requirement Link |
+| :-------------: | :----------: | :----------: | :----------: | :----------:
+| :----------: | :----------: | :----------: |
+| TC1 | <TC1 description> | <steps to execute TC1> | <input values to this
+test case> | <expected output as a result of test case> | <actual output of
+test case> | <did it pass or fail?> | <requirement IDs this test case is
+linked to> |
+
+| ID | Description | Steps | Input Values | Expected Output | Actual Output
+| Pass/Fail | Requirement Link |
+| :-------------: | :----------: | :----------: | :----------: | :----------:
+| :----------: | :----------: | :----------: |
+| TC1 | <TC1 description> | <steps to execute TC1> | <input values to this
+test case> | <expected output as a result of test case> | <actual output of
+test case> | <did it pass or fail?> | <requirement IDs this test case is
+linked to> |
 
 ## System Tests
 
+| ID | Description | Steps | Input Values | Expected Output | Actual Output
+| Pass/Fail | Requirement Link |
+| :-------------: | :----------: | :----------: | :----------: | :----------:
+| :----------: | :----------: | :----------: |
+| TC1 | <TC1 description> | <steps to execute TC1> | <input values to this
+test case> | <expected output as a result of test case> | <actual output of
+test case> | <did it pass or fail?> | <requirement IDs this test case is
+linked to> |
+
+| ID | Description | Steps | Input Values | Expected Output | Actual Output
+| Pass/Fail | Requirement Link |
+| :-------------: | :----------: | :----------: | :----------: | :----------:
+| :----------: | :----------: | :----------: |
+| TC1 | <TC1 description> | <steps to execute TC1> | <input values to this
+test case> | <expected output as a result of test case> | <actual output of
+test case> | <did it pass or fail?> | <requirement IDs this test case is
+linked to> |
+
+| ID | Description | Steps | Input Values | Expected Output | Actual Output
+| Pass/Fail | Requirement Link |
+| :-------------: | :----------: | :----------: | :----------: | :----------:
+| :----------: | :----------: | :----------: |
+| TC1 | <TC1 description> | <steps to execute TC1> | <input values to this
+test case> | <expected output as a result of test case> | <actual output of
+test case> | <did it pass or fail?> | <requirement IDs this test case is
+linked to> |
+
+| ID | Description | Steps | Input Values | Expected Output | Actual Output
+| Pass/Fail | Requirement Link |
+| :-------------: | :----------: | :----------: | :----------: | :----------:
+| :----------: | :----------: | :----------: |
+| TC1 | <TC1 description> | <steps to execute TC1> | <input values to this
+test case> | <expected output as a result of test case> | <actual output of
+test case> | <did it pass or fail?> | <requirement IDs this test case is
+linked to> |
+
 # Software Artifacts
+
+These are diagrams that we made throughout the project to describe and represent how we coded and expect LectureBot to run. These diagrams include the UML Class Diagram, the Communication Diagram, the Use Case Diagram, and a link to our Jira account, where we kept track of what else needed to be done.
+
+* [Jira]
+* [UML Class Diagram]
+* [Use Case Diagram Explanation and Diagram]
+* [Communication Diagram]
