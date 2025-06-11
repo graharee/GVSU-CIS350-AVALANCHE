@@ -16,7 +16,7 @@
 
 [Github](https://github.com/graharee/GVSU-CIS350-AVALANCHE)  
 [Jira](https://cis350-avalanche.atlassian.net/jira/software/projects/SCRUM/boards/1) 
-[UML Class Diagram]().
+[UML Class Diagram](https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/figures/CIS350_Class_Diagram_Final.pdf).
 [Communication Diagram]().
 [Use Case Diagram Explanation]().
 
