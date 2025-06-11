@@ -212,9 +212,10 @@ linked to> |
 
 # Software Artifacts
 
-These are diagrams that we made throughout the project to describe and represent how we coded and expect LectureBot to run. These diagrams include the UML Class Diagram, the Communication Diagram, the Use Case Diagram, and a link to our Jira account, where we kept track of what else needed to be done.
+These are diagrams that we made throughout the project to describe and represent how we coded and expect LectureBot to run. These diagrams include the UML Class Diagram, the Communication Diagram, the Use Case Diagram, a link to our Jira account, where we kept track of what else needed to be done, and lastly, our Burn-up and Ghantt Charts that show our progress throughout the project.
 
 * [Jira](https://cis350-avalanche.atlassian.net/jira/software/projects/SCRUM/boards/1)
 * [UML Class Diagram](https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/figures/CIS350_Class_Diagram_Final.pdf)
 * [Communication Diagram](https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/figures/CIS350_Communication_Diagram.pdf)
 * [Use Case Diagram Explanation](https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/artifacts/use_case_diagram.md)
+* [Burn-Up Chart](https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/figures/Burn_Up_Chart.pdf)
