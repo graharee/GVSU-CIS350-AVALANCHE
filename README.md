@@ -14,7 +14,41 @@
 
 ## How to Run the Code
 
-(I can do this -- Kalia)
+To run this code, you need a couple of things. You need a Python IDE, and to download the following packages:
+* SpeechRecognition
+* PyAudio
+* pyttsx3
+* tkinter
+
+You also need to download a feature called ffmpeg. The following are the steps to download it for Windows Users:
+  1. Type in the Google search engine "install ffmpeg"
+  2. Click the link that says "Download FFmpeg".
+  3. Hover over the type of computer you have (Linux, Windows, or Apple); in most cases, it's Windows.
+  4. Click on the top link that says "gyan.dev"
+  5. Scroll down to "Git master branch build"
+  6. Click "ffmpeg-git-full.7g"
+  7. Open up the folder that it downloads into
+  8. Right-click on it and go down to 7-Zip
+  9. Click Extract files and archive it somewhere other than the download folder
+  10. Go to where you extracted it to, click into the folder
+  11. Then click into the bin folder
+  12. Then copy the path of that (it's right to the left of the search bar)
+  13. Hit the Windows button and type path. Then click Enter
+  14. Go into the "Environmental Variables"
+  15. In the first scroll-down menu, look for the word "Path" and click it.
+  16. Click Edit
+  17. In the pop-up that should appear, click new
+  18. Paste in the path that you copied earlier
+  19. Click "Ok" for the 3 pop-ups
+  20. To test that you installed it correctly, you can press the Windows button again
+  21. Type "cmd" then press Enter
+  22. Then type in the terminal "ffmpeg" and click enter
+  23. If you get a whole bunch of stuff, then you did it correctly.
+
+After all of that is downloaded, you can go into the Python code in your IDE and click run.
+A screen should pop up with a text box and buttons in the top right and left corners, that is LectureBot
+
+Congratulations! You are now running the application. Below in the "User Guide / Implementation" section, you can see how the app works.
 
 ## Important Links   
 
