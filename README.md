@@ -15,7 +15,10 @@
 ## Important Links   
 
 [Github](https://github.com/graharee/GVSU-CIS350-AVALANCHE)  
-[Jira](https://cis350-avalanche.atlassian.net/jira/software/projects/SCRUM/boards/1)  
+[Jira](https://cis350-avalanche.atlassian.net/jira/software/projects/SCRUM/boards/1) 
+[UML Class Diagram]().
+[Communication Diagram]().
+[Use Case Diagram Explanation]().
 
 ## 1. Abstract 
 School is difficult, students often face challenges that effect their ability to fully engage in lecture halls. These include mental fatigue, difficulty concentrating during long class periods, and instructors who speak too quickly for hand written note-taking to keep up. Such issues can lead to incomplete notes, missed information, and added stress when reviewing material outside of class. To address these problems, we developed **LectureBot** that acts as an additional pair of ears for the student. **LectureBot** is designed to capture and process spoken lecture content, providing students with organized summaries of what was discussed. By reducing the cognitive load during class and supporting review afterward, **LectureBot** enhances the overall learning experience. It empowers students to focus on understanding, and ensures that no important detail is lost.
