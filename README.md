@@ -12,6 +12,10 @@
 * [Kalia Dorgelo](https://github.com/DorgeloK/CIS350-HW2-Dorgelo/tree/main) (Developer, Tester)
 * [Nathan Finkel](https://github.com/nathanfinkel/CIS350-HW2-Finkel.git) (Developer, Tester)
 
+## How to Run the Code
+
+(I can do this -- Kalia)
+
 ## Important Links   
 
 [Github](https://github.com/graharee/GVSU-CIS350-AVALANCHE)  
