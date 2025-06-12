@@ -120,9 +120,9 @@ When you hit the download button in the upper right-hand corner, you can see tha
 ### 4.6 Pancake Panel
 
 <p align="left">
-  <img src="https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/LectureBot/Downloading.png" alt="Pancake" width="400" height='400'>
+  <img src="https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/LectureBot/Pancake.png" alt="Pancake" width="400" height='400'>
 </p>
-After you named the file from the download button, it will pop up here. In this case, I named the file "Demo" and it popped up over on the pancake panel.
+After you name the file from the download button, it will pop up here. In this case, I named the file "Demo" and it popped up over on the pancake panel.
 
 ### 4.7 Translating File
 
