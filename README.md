@@ -87,46 +87,56 @@ brief description here
 <p align="left">
   <img src="https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/LectureBot/Main%20Screen.png" alt="Main Screen" width="400" height='400'>
 </p>
+When you first open the app. This is what it looks like.
 
 ### 4.2 Recording Lecture
 
 <p align="left">
   <img src="https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/LectureBot/Recording.png" alt="Recording" width="450" height='400'>
 </p>
+When you click on the microphone button at the top, you can see your microphone activate at the bottom left hand of the photo and as you talk you can see the text box update with what you said.
 
 ### 4.3 Editing Text
 
 <p align="left">
   <img src="https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/LectureBot/Editing.png" alt="Editing" width="400" height='400'>
 </p>
+You can type new sentences and fix grammar by typing in the text box.
 
 ### 4.4 Saving Text
 
 <p align="left">
   <img src="https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/LectureBot/Saving.png" alt="Saving" width="450" height='400'>
 </p>
+There is no physical change when you press the save button at the top, but in the screenshot, you can see "Saving..." in the terminal on PyCharm to prove that it's saving.
 
 ### 4.5 Downloading File
 
 <p align="left">
   <img src="https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/LectureBot/Downloading.png" alt="Downloading" width="400" height='400'>
 </p>
-pancake panel
-<p align="left">
-  <img src="https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/LectureBot/Downloading.png" alt="Main Screen" width="400" height='400'>
-</p>
+When you hit the download button in the upper right-hand corner, you can see that a window pops up prompting you to name the file.
 
-### 4.6 Translating File
+### 4.6 Pancake Panel
+
+<p align="left">
+  <img src="https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/LectureBot/Downloading.png" alt="Pancake" width="400" height='400'>
+</p>
+After you named the file from the download button, it will pop up here. In this case, I named the file "Demo" and it popped up over on the pancake panel.
+
+### 4.7 Translating File
 
 <p align="left">
   <img src="https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/LectureBot/Translating.png" alt="Translating" width="400" height='400'>
 </p>
+When you click the "T" button in the upper right-hand corner, this window pops up, and you can select the language you want to go to. Its default starting language is English, and its default ending language is Spanish. Underneath, you can name the new translated file (The name you put here will also show up on the pancake panel). 
 
-### 4.7 Uploading Audio File
+### 4.8 Uploading Audio File
 
 <p align="left">
   <img src="https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/LectureBot/Uploading.png" alt="Uploading" width="400" height='400'>
 </p>
+Your file explorer window pops up when you click on the upload button in the upper right-hand corner, so you can select your .wave file. 
 
 ## 5. Risk Analysis and Retrospective  
 In the initial stages of creating **LectureBot** our main goals was first to create an application that listens to audio lecture and save this as a text file that can be editted. As development went on other features were added: uploading pre-exisiting audio files, and translating files into other languages. Overall, our goal along the way stayed consistent of creating a better learning experience for the user. 
