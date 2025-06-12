@@ -81,27 +81,52 @@ brief description here
 brief description here
 
 ## 4. User Guide / Implementation  
-Nathan or Kalia?  
+
 ### 4.1 Main Screen
 
+<p align="center">
+  <img src="" alt="Main Screen" width="250">
+</p>
 
 ### 4.2 Recording Lecture
 
+<p align="center">
+  <img src="" alt="Main Screen" width="250">
+</p>
 
 ### 4.3 Editing Text
 
+<p align="center">
+  <img src="" alt="Main Screen" width="250">
+</p>
 
 ### 4.4 Saving Text
 
+<p align="center">
+  <img src="" alt="Main Screen" width="250">
+</p>
 
 ### 4.5 Downloading File
-show pancake panel here too
+
+<p align="center">
+  <img src="" alt="Main Screen" width="250">
+</p>
+pancake panel
+<p align="center">
+  <img src="" alt="Main Screen" width="250">
+</p>
 
 ### 4.6 Translating File
 
+<p align="center">
+  <img src="" alt="Main Screen" width="250">
+</p>
 
 ### 4.7 Uploading Audio File
 
+<p align="center">
+  <img src="" alt="Main Screen" width="250">
+</p>
 
 ## 5. Risk Analysis and Retrospective  
 In the initial stages of creating **LectureBot** our main goals was first to create an application that listens to audio lecture and save this as a text file that can be editted. As development went on other features were added: uploading pre-exisiting audio files, and translating files into other languages. Overall, our goal along the way stayed consistent of creating a better learning experience for the user. 
