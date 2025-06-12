@@ -91,7 +91,7 @@ brief description here
 ### 4.2 Recording Lecture
 
 <p align="left">
-  <img src="https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/LectureBot/Recording.png" alt="Recording" width="400" height='400'>
+  <img src="https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/LectureBot/Recording.png" alt="Recording" width="450" height='400'>
 </p>
 
 ### 4.3 Editing Text
@@ -103,7 +103,7 @@ brief description here
 ### 4.4 Saving Text
 
 <p align="left">
-  <img src="https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/LectureBot/Saving.png" alt="Saving" width="400" height='400'>
+  <img src="https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/LectureBot/Saving.png" alt="Saving" width="450" height='400'>
 </p>
 
 ### 4.5 Downloading File
