@@ -84,48 +84,48 @@ brief description here
 
 ### 4.1 Main Screen
 
-<p align="center">
-  <img src="" alt="Main Screen" width="250">
+<p align="right">
+  <img src="https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/LectureBot/Main%20Screen.png" alt="Main Screen" width="250">
 </p>
 
 ### 4.2 Recording Lecture
 
-<p align="center">
-  <img src="" alt="Main Screen" width="250">
+<p align="right">
+  <img src="" alt="Recording" width="250">
 </p>
 
 ### 4.3 Editing Text
 
-<p align="center">
-  <img src="" alt="Main Screen" width="250">
+<p align="right">
+  <img src="" alt="Editing" width="250">
 </p>
 
 ### 4.4 Saving Text
 
-<p align="center">
-  <img src="" alt="Main Screen" width="250">
+<p align="right">
+  <img src="" alt="Saving" width="250">
 </p>
 
 ### 4.5 Downloading File
 
-<p align="center">
-  <img src="" alt="Main Screen" width="250">
+<p align="right">
+  <img src="" alt="Downloading" width="250">
 </p>
 pancake panel
-<p align="center">
+<p align="right">
   <img src="" alt="Main Screen" width="250">
 </p>
 
 ### 4.6 Translating File
 
-<p align="center">
-  <img src="" alt="Main Screen" width="250">
+<p align="right">
+  <img src="" alt="Translating" width="250">
 </p>
 
 ### 4.7 Uploading Audio File
 
-<p align="center">
-  <img src="" alt="Main Screen" width="250">
+<p align="right">
+  <img src="" alt="Uploading" width="250">
 </p>
 
 ## 5. Risk Analysis and Retrospective  
