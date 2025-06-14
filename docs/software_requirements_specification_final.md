@@ -35,20 +35,22 @@ study purposes.
    4. R18: Clicking the transcript button after pressing it once before shall close the transcript panel.
    5. R19: The transcript panel shall be orange in color.
    6. R20: The transcript panel shall display all files as .txt.
+   7. R21: The transcript panel logo shall have three lines stacked on top of each other.
+   8. R22: The transcript panel shall be in the upper left-hand corner. 
 
 5. Translate Button
-   1. R21: The translation button shall prompt the user to pick a language from a drop-down menu.
-   2. R22: The translation button shall make a new file that is translated and download it to the user's computer.
-   3. R23: The translation button shall prompt the user to name the translated file.
-   4. R24: The translation button shall be allowed to translate non-character-based and character-based languages.
-   5. R25: The translation button shall have a "T" on the button. 
+   1. R23: The translation button shall prompt the user to pick a language from a drop-down menu.
+   2. R24: The translation button shall make a new file that is translated and download it to the user's computer.
+   3. R25: The translation button shall prompt the user to name the translated file.
+   4. R26: The translation button shall be allowed to translate non-character-based and character-based languages.
+   5. R27: The translation button shall have a "T" on the button. 
 
 6. Upload Audio File
-   1. R26: The upload audio file function shall take a file of type .wave.
-   2. R27: The upload button shall be in the upper right corner next to the download button. 
-   3. R28: The upload button shall open up a window leading to the user's file explorer to pick a .wave file.
-   4. R29: The upload file button shall paste the transcribed text into the textbox in the GUI.
-   5. R30: The upload button shall have a box with an arrow pointing out of it. 
+   1. R28: The upload audio file function shall take a file of type .wave.
+   2. R29: The upload button shall be in the upper right corner next to the download button. 
+   3. R30: The upload button shall open up a window leading to the user's file explorer to pick a .wave file.
+   4. R31: The upload file button shall paste the transcribed text into the textbox in the GUI.
+   5. R32: The upload button shall have a box with an arrow pointing out of it. 
 
 # Non-Functional Requirements
 
@@ -102,37 +104,25 @@ study purposes.
 | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------:
 | :----------: | :----------: | :----------: |
-| TC1 | <TC1 description> | <steps to execute TC1> | <input values to this
-test case> | <expected output as a result of test case> | <actual output of
-test case> | <did it pass or fail?> | <requirement IDs this test case is
-linked to> |
+| UT1 | Testing if the download button exists. | 1. Run the unit test. | No inputs to this test. | No expected output of this unit test. | No output of this test case. | Pass | R14, R15 |
 
 | ID | Description | Steps | Input Values | Expected Output | Actual Output
 | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------:
 | :----------: | :----------: | :----------: |
-| TC1 | <TC1 description> | <steps to execute TC1> | <input values to this
-test case> | <expected output as a result of test case> | <actual output of
-test case> | <did it pass or fail?> | <requirement IDs this test case is
-linked to> |
+| UT2 | Test that the audio button exists within the GUI. | 1. Run the unit test. | There are no input values for this test case. | No expected output. | There was no output. | Pass | R7, R10 |
 
 | ID | Description | Steps | Input Values | Expected Output | Actual Output
 | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------:
 | :----------: | :----------: | :----------: |
-| TC1 | <TC1 description> | <steps to execute TC1> | <input values to this
-test case> | <expected output as a result of test case> | <actual output of
-test case> | <did it pass or fail?> | <requirement IDs this test case is
-linked to> |
+| UT3 | This tests if the pancake button exists within the GUI. | 1. Run the unit test. | No input values for this test case. | No expected output. | No output. | Pass | R21, R22 |
 
 | ID | Description | Steps | Input Values | Expected Output | Actual Output
 | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------:
 | :----------: | :----------: | :----------: |
-| TC1 | <TC1 description> | <steps to execute TC1> | <input values to this
-test case> | <expected output as a result of test case> | <actual output of
-test case> | <did it pass or fail?> | <requirement IDs this test case is
-linked to> |
+| UT4 | This tests if the upload button exists within the GUI. | 1. Run the unit test. | No inputs to this unit test. | No expected output. | No actual output. | Pass | R29 |
 
 ## Integration Tests
 
