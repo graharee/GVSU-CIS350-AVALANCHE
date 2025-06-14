@@ -55,35 +55,35 @@ class Test_GUI(unittest.TestCase):
         '''
         self.assertIsNotNone(self.gui.saveButton, "save button is not visible on the GUI")
 
-    def test_download_button_visible(self):
+    def test_download_button_visible(self):  # UT1 in Test Specifications 
         '''
             Description: This test checks if the download button exists
             Return: NONE
         '''
         self.assertIsNotNone(self.gui.downloadButton, "download button is not visible on the GUI")
 
-    def test_pancake_button_visible(self):
+    def test_pancake_button_visible(self):   # UT2 in Test Specifications
         '''
             Description: This test checks if the pancake button exists
             Return: NONE
         '''
         self.assertIsNotNone(self.gui.pancakeButton, "pancake button is not visible on the GUI")
 
-    def test_audio_button_visible(self):
+    def test_audio_button_visible(self):  # UT3 in Test Specifications
         '''
             Description: This test checks if the audio button exists
             Return: NONE
         '''
         self.assertIsNotNone(self.gui.audioButton, "audio button is not visible on the GUI")
 
-    def test_transcript_button_visible(self):
+    def test_transcript_button_visible(self):  
         '''
             Description: This test checks if the transcript button exists
             Return: NONE
         '''
         self.assertIsNotNone(self.gui.transcriptButton, "transcript button is not visible on the GUI")
 
-    def test_audio_file_button_visible(self):
+    def test_audio_file_button_visible(self):  # UT4 in Test Specifications
         '''
             Description: This test checks if the audio file button exists
             Return: NONE
