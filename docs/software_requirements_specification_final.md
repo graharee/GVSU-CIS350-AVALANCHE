@@ -100,105 +100,95 @@ study purposes.
 
 ## Unit Tests
 
-| ID | Description | Steps | Input Values | Expected Output | Actual Output
-| Pass/Fail | Requirement Link |
-| :-------------: | :----------: | :----------: | :----------: | :----------:
-| :----------: | :----------: | :----------: |
+### 1
+| ID | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
+
+| :-------------: | :----------: | :----------: | :----------: | :----------:| :----------: | :----------: | :----------: |
+
 | UT1 | Testing if the download button exists. | 1. Run the unit test. | No inputs to this test. | No expected output of this unit test. | No output of this test case. | Pass | R14, R15 |
 
-| ID | Description | Steps | Input Values | Expected Output | Actual Output
-| Pass/Fail | Requirement Link |
-| :-------------: | :----------: | :----------: | :----------: | :----------:
-| :----------: | :----------: | :----------: |
+### 2
+| ID | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
+
+| :-------------: | :----------: | :----------: | :----------: | :----------:| :----------: | :----------: | :----------: |
+
 | UT2 | Test that the audio button exists within the GUI. | 1. Run the unit test. | There are no input values for this test case. | No expected output. | There was no output. | Pass | R7, R10 |
 
-| ID | Description | Steps | Input Values | Expected Output | Actual Output
-| Pass/Fail | Requirement Link |
-| :-------------: | :----------: | :----------: | :----------: | :----------:
-| :----------: | :----------: | :----------: |
+### 3
+| ID | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
+
+| :-------------: | :----------: | :----------: | :----------: | :----------:| :----------: | :----------: | :----------: |
+
 | UT3 | This tests if the pancake button exists within the GUI. | 1. Run the unit test. | No input values for this test case. | No expected output. | No output. | Pass | R21, R22 |
 
-| ID | Description | Steps | Input Values | Expected Output | Actual Output
-| Pass/Fail | Requirement Link |
-| :-------------: | :----------: | :----------: | :----------: | :----------:
-| :----------: | :----------: | :----------: |
+### 4
+| ID | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
+
+| :-------------: | :----------: | :----------: | :----------: | :----------:| :----------: | :----------: | :----------: |
+
 | UT4 | This tests if the upload button exists within the GUI. | 1. Run the unit test. | No inputs to this unit test. | No expected output. | No actual output. | Pass | R29 |
 
 ## Integration Tests
 
-| ID | Description | Steps | Input Values | Expected Output | Actual Output
-| Pass/Fail | Requirement Link |
-| :-------------: | :----------: | :----------: | :----------: | :----------:
-| :----------: | :----------: | :----------: |
-| TC1 | <TC1 description> | <steps to execute TC1> | <input values to this
+### 1
+| ID | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
+
+| :-------------: | :----------: | :----------: | :----------: | :----------:| :----------: | :----------: | :----------: |
+
+| IT1 | This tests that when the download button is pressed, the file will appear in the Transcript Panel | 1. Run "if_name_ == "_main_"" function| Inputs for this test is a document and a name for the file. | No expected output. | No actual output. | Pass | R13, R16, R17, R20 |
+
+### 2
+| ID | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
+
+| :-------------: | :----------: | :----------: | :----------: | :----------:| :----------: | :----------: | :----------: |
+
+| IT2 | <TC1 description> | <steps to execute TC1> | <input values to this
 test case> | <expected output as a result of test case> | <actual output of
 test case> | <did it pass or fail?> | <requirement IDs this test case is
 linked to> |
 
-| ID | Description | Steps | Input Values | Expected Output | Actual Output
-| Pass/Fail | Requirement Link |
-| :-------------: | :----------: | :----------: | :----------: | :----------:
-| :----------: | :----------: | :----------: |
-| TC1 | <TC1 description> | <steps to execute TC1> | <input values to this
-test case> | <expected output as a result of test case> | <actual output of
-test case> | <did it pass or fail?> | <requirement IDs this test case is
-linked to> |
+### 3
+| ID | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 
-| ID | Description | Steps | Input Values | Expected Output | Actual Output
-| Pass/Fail | Requirement Link |
-| :-------------: | :----------: | :----------: | :----------: | :----------:
-| :----------: | :----------: | :----------: |
-| TC1 | <TC1 description> | <steps to execute TC1> | <input values to this
-test case> | <expected output as a result of test case> | <actual output of
-test case> | <did it pass or fail?> | <requirement IDs this test case is
-linked to> |
+| :-------------: | :----------: | :----------: | :----------: | :----------:| :----------: | :----------: | :----------: |
 
-| ID | Description | Steps | Input Values | Expected Output | Actual Output
-| Pass/Fail | Requirement Link |
-| :-------------: | :----------: | :----------: | :----------: | :----------:
-| :----------: | :----------: | :----------: |
-| TC1 | <TC1 description> | <steps to execute TC1> | <input values to this
+| IT3 | <TC1 description> | <steps to execute TC1> | <input values to this
 test case> | <expected output as a result of test case> | <actual output of
 test case> | <did it pass or fail?> | <requirement IDs this test case is
 linked to> |
 
 ## System Tests
 
-| ID | Description | Steps | Input Values | Expected Output | Actual Output
-| Pass/Fail | Requirement Link |
-| :-------------: | :----------: | :----------: | :----------: | :----------:
-| :----------: | :----------: | :----------: |
-| TC1 | <TC1 description> | <steps to execute TC1> | <input values to this
+### 1
+| ID | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
+
+| :-------------: | :----------: | :----------: | :----------: | :----------:| :----------: | :----------: | :----------: |
+
+| ST1 | <TC1 description> | <steps to execute TC1> | <input values to this
 test case> | <expected output as a result of test case> | <actual output of
 test case> | <did it pass or fail?> | <requirement IDs this test case is
 linked to> |
 
-| ID | Description | Steps | Input Values | Expected Output | Actual Output
-| Pass/Fail | Requirement Link |
-| :-------------: | :----------: | :----------: | :----------: | :----------:
-| :----------: | :----------: | :----------: |
-| TC1 | <TC1 description> | <steps to execute TC1> | <input values to this
+### 2
+| ID | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
+
+| :-------------: | :----------: | :----------: | :----------: | :----------:| :----------: | :----------: | :----------: |
+
+| ST2 | <TC1 description> | <steps to execute TC1> | <input values to this
 test case> | <expected output as a result of test case> | <actual output of
 test case> | <did it pass or fail?> | <requirement IDs this test case is
 linked to> |
 
-| ID | Description | Steps | Input Values | Expected Output | Actual Output
-| Pass/Fail | Requirement Link |
-| :-------------: | :----------: | :----------: | :----------: | :----------:
-| :----------: | :----------: | :----------: |
-| TC1 | <TC1 description> | <steps to execute TC1> | <input values to this
+### 3
+| ID | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
+
+| :-------------: | :----------: | :----------: | :----------: | :----------:| :----------: | :----------: | :----------: |
+
+| ST3 | <TC1 description> | <steps to execute TC1> | <input values to this
 test case> | <expected output as a result of test case> | <actual output of
 test case> | <did it pass or fail?> | <requirement IDs this test case is
 linked to> |
 
-| ID | Description | Steps | Input Values | Expected Output | Actual Output
-| Pass/Fail | Requirement Link |
-| :-------------: | :----------: | :----------: | :----------: | :----------:
-| :----------: | :----------: | :----------: |
-| TC1 | <TC1 description> | <steps to execute TC1> | <input values to this
-test case> | <expected output as a result of test case> | <actual output of
-test case> | <did it pass or fail?> | <requirement IDs this test case is
-linked to> |
 
 # Software Artifacts
 
