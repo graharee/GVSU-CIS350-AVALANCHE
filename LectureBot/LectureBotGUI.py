@@ -308,6 +308,10 @@ class GUI:
             self.isPanelVisible = False     # Change state to panel not shown
 
     def loadfile(self,filename):
+        """
+        :param filename: name of the file that is being loaded
+        :return: None
+        """
 
         filepath = self.save_folder / filename
 
@@ -323,6 +327,7 @@ class GUI:
         self.text_box.insert("1.0",text)
 
         self.curr_file = filepath
+        self.txt_file = str(filepath)
 
 
     def downloadPress(self):
@@ -336,7 +341,7 @@ class GUI:
         self.savingFile.title("Naming Lecture File")
         self.savingFile.geometry("200x100")
 
-        label = Label(self.savingFile, text = "File saves to downloads folder", font = ("Times New Roman", 10))
+        label = Label(self.savingFile, text = "File saves to saved_transcripts folder", font = ("Times New Roman", 10))
         label.place(x = 18, y = 10)             # Always saving files to downloads folder
 
         self.saveButton = Button(self.savingFile, text = "Save", command = self.getFilename)
@@ -406,11 +411,9 @@ class GUI:
             text = transcriber.transcribe()
 
             if text:
-                with open(self.file,"a") as f:
+                with open("output.txt","a") as f:
                     f.write(text + "\n")
-                self.text_box = Text(self.main, width=70, height=20, font=("Times New Roman", 12))
-                self.text_box.place(x=200, y=120)
-                self.text_box.insert(END,text)
+                self.text_box.insert(END,text + "\n")
 
 
 class Translate():
