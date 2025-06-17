@@ -45,6 +45,8 @@ You also need to download a feature called ffmpeg. The following are the steps t
   22. Then type in the terminal "ffmpeg" and click enter
   23. If you get a whole bunch of stuff, then you did it correctly.
 
+Last but not least, go into your IDE Terminal and type "pip install -U openai-whisper to have whisper working.
+
 After all of that is downloaded, you can go into the Python code in your IDE and click run.
 A screen should pop up with a text box and buttons in the top right and left corners, that is LectureBot
 
