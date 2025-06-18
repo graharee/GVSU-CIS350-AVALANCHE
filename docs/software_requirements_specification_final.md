@@ -24,7 +24,7 @@ study purposes.
 
 3. Download button
    1. R11: The user shall download the files to the user's computer by pressing the download button.
-   2. R12: The download button shall download the file to the downloads folder in File Explorer on the user's computer.
+   2. R12: The download button shall download the file to the Downloads or saved_transcripts folder in File Explorer on the user's computer.
    3. R13: By clicking the download button, the application shall prompt the user to name the document they saved.
    4. R14: The download button shall have an arrow pointing downwards to a line to indicate a file being downloaded.
    5. R15: The download button shall be in the upper right corner of the GUI.
@@ -135,27 +135,21 @@ study purposes.
 
 | :-------------: | :----------: | :----------: | :----------: | :----------:| :----------: | :----------: | :----------: |
 
-| IT1 | This tests that when the download button is pressed, the file will appear in the Transcript Panel | 1. Run "if_name_ == "_main_"" function| Inputs for this test is a document and a name for the file. | No expected output. | No actual output. | Pass | R13, R16, R17, R20 |
+| IT1 | This tests that when the download button is pressed, the file will appear in the Transcript Panel | 1. Run "if_name_ == "_main_"" function 2. Enter a file name. | Inputs for this test are a document and a name for the file. | No expected output. | No actual output. | Pass | R13, R16, R17, R20 |
 
 ### 2
 | ID | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 
 | :-------------: | :----------: | :----------: | :----------: | :----------:| :----------: | :----------: | :----------: |
 
-| IT2 | <TC1 description> | <steps to execute TC1> | <input values to this
-test case> | <expected output as a result of test case> | <actual output of
-test case> | <did it pass or fail?> | <requirement IDs this test case is
-linked to> |
+| IT2 | This test verifies that when the download button is pressed, the file ends up downloaded to your computer. | 1. Run "if_name_ == "_main_"" function 2. Enter a file name. (This would be the second file name you enter.) | No input values | No output expected. | No actual output | Pass | R11, R12 |
 
 ### 3
 | ID | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 
 | :-------------: | :----------: | :----------: | :----------: | :----------:| :----------: | :----------: | :----------: |
 
-| IT3 | <TC1 description> | <steps to execute TC1> | <input values to this
-test case> | <expected output as a result of test case> | <actual output of
-test case> | <did it pass or fail?> | <requirement IDs this test case is
-linked to> |
+| IT3 | This test verifies that when the translate button is pressed that the text in the files translates and then goes onto your computer. | 1. Run "if_name_ == "_main_"" | No input values| Expected output is the translation of the file | The translated version of the file | Pass | R24, R25 |
 
 ## System Tests
 
@@ -192,10 +186,11 @@ linked to> |
 
 # Software Artifacts
 
-These are diagrams that we made throughout the project to describe and represent how we coded and expect LectureBot to run. These diagrams include the UML Class Diagram, the Communication Diagram, the Use Case Diagram, a link to our Jira account, where we kept track of what else needed to be done, and lastly, our Burn-up and Ghantt Charts that show our progress throughout the project.
+These are diagrams that we made throughout the project to describe and represent how we coded and expect LectureBot to run. These diagrams include the UML Class Diagram, the Communication Diagram, the Use Case Diagram, a link to our Jira account, where we kept track of what else needed to be done, and lastly, our Burn-up and Gantt Charts that show our progress throughout the project.
 
 * [Jira](https://cis350-avalanche.atlassian.net/jira/software/projects/SCRUM/boards/1)
 * [UML Class Diagram](https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/figures/CIS350_Class_Diagram_Final.pdf)
 * [Communication Diagram](https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/figures/CIS350_Communication_Diagram.pdf)
 * [Use Case Diagram Explanation](https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/artifacts/use_case_diagram.md)
 * [Burn-Up Chart](https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/figures/Burn_Up_Chart.pdf)
+* [Gantt Chart]()
