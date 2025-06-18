@@ -71,16 +71,25 @@ School is difficult, students often face challenges that effect their ability to
 **LectureBot** aims to help students cultivate a better learning experience within the classroom. This application allows students to record lectures (in-person or online), edit the transcripts, and save it as a text file for later studying. Not only does **LectureBot** offer a way to record a live lecture, students are able to get a written transcript of a recorded lecture, simply by uploading a .wav file. Lastly, to further enhance the user's learning experience, **LectureBot** allows users to be able to translate their lecture into a non-charcter language of their choosing.   
 
 ## 3. Architectural Design  
-Nathan or Kalia? 
+
 **all photos that are uploaded should be added into the figures folder on Git**
 ### 3.1 UML Diagram
-brief description here
+
+<p align="center">
+  <img src="https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/figures/CIS350_Class_Diagram_Final.pdf" alt="UML Diagram" width="250">
+</p>
 
 ### 3.2 Use Case Diagram
-brief description here
+
+<p align="center">
+  <img src="" alt="Use Case Diagram" width="250">
+</p>
 
 ### 3.3 Communication Diagram
-brief description here
+
+<p align="center">
+  <img src="https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/figures/CIS350_Communication_Diagram.pdf" alt="Communication Diagram" width="250">
+</p>
 
 ## 4. User Guide / Implementation  
 
