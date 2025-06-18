@@ -60,7 +60,16 @@ class GUI:
 
         # adding pancake panel that shows all downloaded files
         self.isPanelVisible = False
+
+        #creates the folder that the .txt files save to if not already made
+        self.save_folder = Path("saved_transcripts")
+        self.save_folder.mkdir(exist_ok=True)
+
+
         self.fileList = []
+
+        for file in self.save_folder.iterdir():
+            self.fileList.append(file.name)
 
         self.pancakePanel = Frame(self.main, background="orange", width=200, height=850)
         label = Label(self.pancakePanel, text="Files Downloaded:", font=("Times New Roman", 14, "bold"),
@@ -298,9 +307,11 @@ class GUI:
             self.pancakePanel.place(x=0, y=0)  # Show the panel
 
             y = 0
-            for item in self.fileList:      # List all the file created
-                label = Label(self.pancakePanel, text=item, font=("Times New Roman", 12, "bold"), background="orange")
-                label.place(x=18, y=40 + y)
+
+            for item in self.fileList:      # List all the file created and creates a button for them
+                button = Button(self.pancakePanel, text=item, font=("Times New Roman", 12, "bold"), background="orange",
+                                command=lambda i=item: self.loadfile(i))
+                button.place(x = 18, y = 40 + y)
                 y += 30
 
             self.isPanelVisible = True      # Change state to panel shown
@@ -308,6 +319,29 @@ class GUI:
         else:   # If the panel is shown
             self.pancakePanel.place(x=-200, y=50)  # Make the panel disappear
             self.isPanelVisible = False     # Change state to panel not shown
+
+    def loadfile(self,filename):
+        """
+        :param filename: name of the file that is being loaded
+        :return: None
+        """
+
+        filepath = self.save_folder / filename
+
+        #checks if file exists
+        if not filepath.exists():
+            print(f"{filename} does not exists")
+            return None
+
+        with open(filepath,"r") as f:
+            text = f.read()
+
+        self.text_box.delete("1.0","end")
+        self.text_box.insert("1.0",text)
+
+        self.curr_file = filepath
+        self.txt_file = str(filepath)
+
 
     def downloadPress(self):
         """
@@ -320,8 +354,9 @@ class GUI:
         self.savingFile.title("Naming Lecture File")
         self.savingFile.geometry("200x100")
 
-        label = Label(self.savingFile, text="File saves to downloads folder", font=("Times New Roman", 10))
-        label.place(x=18, y=10)             # Always saving files to downloads folder
+
+        label = Label(self.savingFile, text = "File saves to saved_transcripts folder", font = ("Times New Roman", 10))
+        label.place(x = 18, y = 10)             # Always saving files to downloads folder
 
         self.saveButton = Button(self.savingFile, text="Save", command=self.getFilename)
         # Creating save button on pop up window, this button saves the file to downloads folder
@@ -342,13 +377,13 @@ class GUI:
         self.savingFile.destroy()
 
     def saveFile(self):
-        """
-            Description: Saving file to downloads folder
-            Return: NONE
-        """
 
-        downloads = Path.home() / "Downloads"
-        file_path = downloads / self.lectureName
+        '''
+            Description: Saving file to save_folder
+            Return: NONE
+        '''
+
+        file_path = self.save_folder / self.lectureName
 
         with open("output.txt", "r") as output:  # Copying contents of the output file into the file the user created
             content = output.read()
@@ -360,12 +395,14 @@ class GUI:
             output.write("")
 
     def saveTranslated(self):
-        """
-            Description: Saving translated file to downloads folder and then clearing output.txt, as well.
+
+        '''
+            Description: Saving translated file to the saved_transcripts folder and then clearing output.txt, as well.
             Return: NONE
-        """
-        downloads = Path.home() / "Downloads"
-        file_path = downloads / self.lectureName
+        '''
+
+        file_path = self.save_folder / self.lectureName
+
 
         # Copying contents of the output file into the file the user created
         with open("translated_output.txt", "r", encoding='utf-8') as output:
@@ -392,11 +429,9 @@ class GUI:
             text = transcriber.transcribe()
 
             if text:
-                with open(self.file, "a") as f:
+                with open("output.txt","a") as f:
                     f.write(text + "\n")
-                self.text_box = Text(self.main, width=70, height=20, font=("Times New Roman", 12))
-                self.text_box.place(x=200, y=120)
-                self.text_box.insert(END, text)
+                self.text_box.insert(END,text + "\n")
 
 
 class Translate:
@@ -417,7 +452,7 @@ class Translate:
         self.text_box = text_box
         self.trans = Translator()
         self.translation = None
-        self.file_name = f"translated_{self.file}"
+        self.file_name = f"translated_output.txt"
 
     async def output(self, text):
         """
