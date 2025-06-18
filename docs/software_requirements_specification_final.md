@@ -193,4 +193,4 @@ These are diagrams that we made throughout the project to describe and represent
 * [Communication Diagram](https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/figures/CIS350_Communication_Diagram.pdf)
 * [Use Case Diagram Explanation](https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/artifacts/use_case_diagram.md)
 * [Burn-Up Chart](https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/figures/Burn_Up_Chart.pdf)
-* [Gantt Chart]()
+* [Gantt Chart](https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/figures/Gantt%20Chart.pdf)
