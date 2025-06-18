@@ -82,7 +82,7 @@ School is difficult, students often face challenges that effect their ability to
 ### 3.2 Use Case Diagram
 
 <p align="center">
-  <img src="" alt="Use Case Diagram" width="250">
+  <img src="https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/artifacts/use_case_diagram.pdf" alt="Use Case Diagram" width="250">
 </p>
 
 ### 3.3 Communication Diagram
