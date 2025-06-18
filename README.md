@@ -75,20 +75,20 @@ School is difficult, students often face challenges that effect their ability to
 **all photos that are uploaded should be added into the figures folder on Git**
 ### 3.1 UML Diagram
 
-<p align="center">
-  <img src="https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/figures/CIS350_Class_Diagram_Final.pdf" alt="UML Diagram" width="250">
+<p align="left">
+  <img src="https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/figures/CIS350_Class_Diagram_Final.pdf" alt="UML Diagram" width="300" height='300'>
 </p>
 
 ### 3.2 Use Case Diagram
 
-<p align="center">
-  <img src="https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/artifacts/use_case_diagram.pdf" alt="Use Case Diagram" width="250">
+<p align="left">
+  <img src="https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/artifacts/use_case_diagram.pdf" alt="Use Case Diagram" width="300" height="300">
 </p>
 
 ### 3.3 Communication Diagram
 
-<p align="center">
-  <img src="https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/figures/CIS350_Communication_Diagram.pdf" alt="Communication Diagram" width="250">
+<p align="left">
+  <img src="https://github.com/graharee/GVSU-CIS350-AVALANCHE/blob/main/figures/CIS350_Communication_Diagram.pdf" alt="Communication Diagram" width="300" height="300">
 </p>
 
 ## 4. User Guide / Implementation  
