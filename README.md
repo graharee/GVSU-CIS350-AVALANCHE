@@ -160,4 +160,4 @@ This risk is not anything detrimental to **LectureBot**'s overall design. We are
 Overall, we believe that **LectureBot** helps improve students' learning experiences. Instead of hurrying to write down notes, students are able to relax and know that **LectureBot** will handle it for them. We hope that **LectureBot** can be used to help the stress of busy students while also helping them in learning more. Of course, there is always room for improvement when it comes to app development, and this is something we will continue to strive to do.  
 
 ## 7. Walkthrough Demonstration  
-[Video Demo](put video demo here, Nathan or Kalia to make)  
+[Video Demo](https://gvsu.hosted.panopto.com/Panopto/Pages/Capture.aspx?folderId=7ffa5170-2254-48eb-8150-b300012061e9)
