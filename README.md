@@ -15,13 +15,16 @@
 ## How to Run the Code
 
 To run this code, you need a couple of things. You need a Python IDE, and to download the following packages:
+
 * SpeechRecognition
 * PyAudio
 * pyttsx3
 * tkinter
 * googletrans
 * whisper
+
 You can do this by using the following commands in your IDE Terminal:
+
 * pip install SpeechRecognition
 * pip install pyaudio
 * pip install tkinter
