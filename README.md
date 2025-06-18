@@ -19,6 +19,14 @@ To run this code, you need a couple of things. You need a Python IDE, and to dow
 * PyAudio
 * pyttsx3
 * tkinter
+* googletrans
+* whisper
+You can do this by using the following commands in your IDE Terminal:
+* pip install SpeechRecognition
+* pip install pyaudio
+* pip install tkinter
+* pip install googletrans
+* pip install -U openai-whisper
 
 You also need to download a feature called ffmpeg. The following are the steps to download it for Windows Users:
   1. Type in the Google search engine "install ffmpeg"
@@ -44,8 +52,6 @@ You also need to download a feature called ffmpeg. The following are the steps t
   21. Type "cmd" then press Enter
   22. Then type in the terminal "ffmpeg" and click enter
   23. If you get a whole bunch of stuff, then you did it correctly.
-
-Last but not least, go into your IDE Terminal and type "pip install -U openai-whisper to have whisper working.
 
 After all of that is downloaded, you can go into the Python code in your IDE and click run.
 A screen should pop up with a text box and buttons in the top right and left corners, that is LectureBot
