@@ -304,7 +304,7 @@ class GUI:
         """
 
         if self.isPanelVisible is False:  # If the panel is not shown
-            self.pancakePanel.place(x=0, y=0)  # Show the panel
+            self.pancakePanel.place(x=0, y=50)  # Show the panel
 
             y = 0
 
